@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */; };
+		F8EEE87F27792BA000BAFD30 /* KickbackAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EEE87E27792BA000BAFD30 /* KickbackAppApp.swift */; };
+		F8EEE88127792BA000BAFD30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EEE88027792BA000BAFD30 /* ContentView.swift */; };
+		F8EEE88327792BA000BAFD30 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8EEE88227792BA000BAFD30 /* Assets.xcassets */; };
+		F8EEE88627792BA000BAFD30 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8EEE88527792BA000BAFD30 /* Preview Assets.xcassets */; };
+		F8EEE89027792BA000BAFD30 /* KickbackAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EEE88F27792BA000BAFD30 /* KickbackAppTests.swift */; };
+		F8EEE89A27792BA000BAFD30 /* KickbackAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EEE89927792BA000BAFD30 /* KickbackAppUITests.swift */; };
+		F8EEE89C27792BA000BAFD30 /* KickbackAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EEE89B27792BA000BAFD30 /* KickbackAppUITestsLaunchTests.swift */; };
+		F8EEE8A927792BB100BAFD30 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EEE8A827792BB100BAFD30 /* ColorExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8EEE88C27792BA000BAFD30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8EEE87327792BA000BAFD30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8EEE87A27792BA000BAFD30;
+			remoteInfo = KickbackApp;
+		};
+		F8EEE89627792BA000BAFD30 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8EEE87327792BA000BAFD30 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8EEE87A27792BA000BAFD30;
+			remoteInfo = KickbackApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		F8EEE87B27792BA000BAFD30 /* KickbackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KickbackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8EEE87E27792BA000BAFD30 /* KickbackAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickbackAppApp.swift; sourceTree = "<group>"; };
+		F8EEE88027792BA000BAFD30 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F8EEE88227792BA000BAFD30 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8EEE88527792BA000BAFD30 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F8EEE88B27792BA000BAFD30 /* KickbackAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KickbackAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8EEE88F27792BA000BAFD30 /* KickbackAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickbackAppTests.swift; sourceTree = "<group>"; };
+		F8EEE89527792BA000BAFD30 /* KickbackAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KickbackAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8EEE89927792BA000BAFD30 /* KickbackAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickbackAppUITests.swift; sourceTree = "<group>"; };
+		F8EEE89B27792BA000BAFD30 /* KickbackAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickbackAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8EEE8A827792BB100BAFD30 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8EEE87827792BA000BAFD30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8EEE88827792BA000BAFD30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8EEE89227792BA000BAFD30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8EEE87227792BA000BAFD30 = {
+			isa = PBXGroup;
+			children = (
+				F8EEE87D27792BA000BAFD30 /* KickbackApp */,
+				F8EEE88E27792BA000BAFD30 /* KickbackAppTests */,
+				F8EEE89827792BA000BAFD30 /* KickbackAppUITests */,
+				F8EEE87C27792BA000BAFD30 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8EEE87C27792BA000BAFD30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8EEE87B27792BA000BAFD30 /* KickbackApp.app */,
+				F8EEE88B27792BA000BAFD30 /* KickbackAppTests.xctest */,
+				F8EEE89527792BA000BAFD30 /* KickbackAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8EEE87D27792BA000BAFD30 /* KickbackApp */ = {
+			isa = PBXGroup;
+			children = (
+				F8EEE8A827792BB100BAFD30 /* ColorExtension.swift */,
+				F8EEE87E27792BA000BAFD30 /* KickbackAppApp.swift */,
+				F8EEE88027792BA000BAFD30 /* ContentView.swift */,
+				F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */,
+				F8EEE88227792BA000BAFD30 /* Assets.xcassets */,
+				F8EEE88427792BA000BAFD30 /* Preview Content */,
+			);
+			path = KickbackApp;
+			sourceTree = "<group>";
+		};
+		F8EEE88427792BA000BAFD30 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F8EEE88527792BA000BAFD30 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F8EEE88E27792BA000BAFD30 /* KickbackAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8EEE88F27792BA000BAFD30 /* KickbackAppTests.swift */,
+			);
+			path = KickbackAppTests;
+			sourceTree = "<group>";
+		};
+		F8EEE89827792BA000BAFD30 /* KickbackAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F8EEE89927792BA000BAFD30 /* KickbackAppUITests.swift */,
+				F8EEE89B27792BA000BAFD30 /* KickbackAppUITestsLaunchTests.swift */,
+			);
+			path = KickbackAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8EEE87A27792BA000BAFD30 /* KickbackApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8EEE89F27792BA000BAFD30 /* Build configuration list for PBXNativeTarget "KickbackApp" */;
+			buildPhases = (
+				F8EEE87727792BA000BAFD30 /* Sources */,
+				F8EEE87827792BA000BAFD30 /* Frameworks */,
+				F8EEE87927792BA000BAFD30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KickbackApp;
+			productName = KickbackApp;
+			productReference = F8EEE87B27792BA000BAFD30 /* KickbackApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F8EEE88A27792BA000BAFD30 /* KickbackAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8EEE8A227792BA000BAFD30 /* Build configuration list for PBXNativeTarget "KickbackAppTests" */;
+			buildPhases = (
+				F8EEE88727792BA000BAFD30 /* Sources */,
+				F8EEE88827792BA000BAFD30 /* Frameworks */,
+				F8EEE88927792BA000BAFD30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8EEE88D27792BA000BAFD30 /* PBXTargetDependency */,
+			);
+			name = KickbackAppTests;
+			productName = KickbackAppTests;
+			productReference = F8EEE88B27792BA000BAFD30 /* KickbackAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F8EEE89427792BA000BAFD30 /* KickbackAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8EEE8A527792BA000BAFD30 /* Build configuration list for PBXNativeTarget "KickbackAppUITests" */;
+			buildPhases = (
+				F8EEE89127792BA000BAFD30 /* Sources */,
+				F8EEE89227792BA000BAFD30 /* Frameworks */,
+				F8EEE89327792BA000BAFD30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8EEE89727792BA000BAFD30 /* PBXTargetDependency */,
+			);
+			name = KickbackAppUITests;
+			productName = KickbackAppUITests;
+			productReference = F8EEE89527792BA000BAFD30 /* KickbackAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8EEE87327792BA000BAFD30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					F8EEE87A27792BA000BAFD30 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					F8EEE88A27792BA000BAFD30 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = F8EEE87A27792BA000BAFD30;
+					};
+					F8EEE89427792BA000BAFD30 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = F8EEE87A27792BA000BAFD30;
+					};
+				};
+			};
+			buildConfigurationList = F8EEE87627792BA000BAFD30 /* Build configuration list for PBXProject "KickbackApp" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F8EEE87227792BA000BAFD30;
+			productRefGroup = F8EEE87C27792BA000BAFD30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8EEE87A27792BA000BAFD30 /* KickbackApp */,
+				F8EEE88A27792BA000BAFD30 /* KickbackAppTests */,
+				F8EEE89427792BA000BAFD30 /* KickbackAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8EEE87927792BA000BAFD30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8EEE88627792BA000BAFD30 /* Preview Assets.xcassets in Resources */,
+				F8EEE88327792BA000BAFD30 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8EEE88927792BA000BAFD30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8EEE89327792BA000BAFD30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8EEE87727792BA000BAFD30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8EEE8A927792BB100BAFD30 /* ColorExtension.swift in Sources */,
+				F8EEE88127792BA000BAFD30 /* ContentView.swift in Sources */,
+				F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */,
+				F8EEE87F27792BA000BAFD30 /* KickbackAppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8EEE88727792BA000BAFD30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8EEE89027792BA000BAFD30 /* KickbackAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8EEE89127792BA000BAFD30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8EEE89A27792BA000BAFD30 /* KickbackAppUITests.swift in Sources */,
+				F8EEE89C27792BA000BAFD30 /* KickbackAppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8EEE88D27792BA000BAFD30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8EEE87A27792BA000BAFD30 /* KickbackApp */;
+			targetProxy = F8EEE88C27792BA000BAFD30 /* PBXContainerItemProxy */;
+		};
+		F8EEE89727792BA000BAFD30 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8EEE87A27792BA000BAFD30 /* KickbackApp */;
+			targetProxy = F8EEE89627792BA000BAFD30 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F8EEE89D27792BA000BAFD30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F8EEE89E27792BA000BAFD30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F8EEE8A027792BA000BAFD30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KickbackApp/Preview Content\"";
+				DEVELOPMENT_TEAM = SN7NPF67AD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanHopman.KickbackApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F8EEE8A127792BA000BAFD30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"KickbackApp/Preview Content\"";
+				DEVELOPMENT_TEAM = SN7NPF67AD;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanHopman.KickbackApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F8EEE8A327792BA000BAFD30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SN7NPF67AD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanHopman.KickbackAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KickbackApp.app/KickbackApp";
+			};
+			name = Debug;
+		};
+		F8EEE8A427792BA000BAFD30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SN7NPF67AD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanHopman.KickbackAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KickbackApp.app/KickbackApp";
+			};
+			name = Release;
+		};
+		F8EEE8A627792BA000BAFD30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SN7NPF67AD;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanHopman.KickbackAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KickbackApp;
+			};
+			name = Debug;
+		};
+		F8EEE8A727792BA000BAFD30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SN7NPF67AD;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StefanHopman.KickbackAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KickbackApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8EEE87627792BA000BAFD30 /* Build configuration list for PBXProject "KickbackApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8EEE89D27792BA000BAFD30 /* Debug */,
+				F8EEE89E27792BA000BAFD30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8EEE89F27792BA000BAFD30 /* Build configuration list for PBXNativeTarget "KickbackApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8EEE8A027792BA000BAFD30 /* Debug */,
+				F8EEE8A127792BA000BAFD30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8EEE8A227792BA000BAFD30 /* Build configuration list for PBXNativeTarget "KickbackAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8EEE8A327792BA000BAFD30 /* Debug */,
+				F8EEE8A427792BA000BAFD30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8EEE8A527792BA000BAFD30 /* Build configuration list for PBXNativeTarget "KickbackAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8EEE8A627792BA000BAFD30 /* Debug */,
+				F8EEE8A727792BA000BAFD30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8EEE87327792BA000BAFD30 /* Project object */;
+}
