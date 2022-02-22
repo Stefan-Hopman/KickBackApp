@@ -33,7 +33,7 @@ struct Home: View {
                     Spacer()
                     Image("kickBackLogo")
                         .resizable()
-                        .frame(width: 60, height: 60)
+                        .frame(width: 80, height: 96)
                         .cornerRadius(10)
                         //.frame(maxWidth: .infinity, maxHeight: .infinity)
                     Spacer()
@@ -88,16 +88,18 @@ struct Home: View {
                                 .clipShape(Circle())
                         }
                     }
-                    .padding(.top, 30)
-                
+                    .padding(.top, 10)
+                    Spacer()
                     Spacer()
                 }
                 .padding(.vertical)
             }
             .background(Color(CGColor.white).edgesIgnoringSafeArea(.all))
+            .navigationTitle("")
             }
         }
     }
+    
 
 // Curve
 struct CShape : Shape {
@@ -187,6 +189,7 @@ struct Login : View{
                     NavigationLink(destination: ForgotPasswordView()){
                         Text("Forgot Password?")
                             .foregroundColor(Color.white.opacity(0.6))
+                        
                     }
                 }
                 .padding(.horizontal)
@@ -214,7 +217,7 @@ struct Login : View{
                     .fontWeight(.bold)
                     .padding(.vertical)
                     .padding(.horizontal, 50)
-                    .background(Color(CGColor.gray))
+                    .background(Color.black)
                     .clipShape(Capsule())
                     //shadow of the button
                     .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
@@ -321,7 +324,7 @@ struct SignUP : View{
                     .fontWeight(.bold)
                     .padding(.vertical)
                     .padding(.horizontal, 50)
-                    .background(Color(CGColor.gray))
+                    .background(Color.black)
                     .clipShape(Capsule())
                     //shadow of the button
                     .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)

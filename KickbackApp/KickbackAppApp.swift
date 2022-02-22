@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@main
+    @main
 struct KickbackAppApp: App {
     var body: some Scene {
         WindowGroup {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F849418027C006F200CCB163 /* CustomTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849417F27C006F200CCB163 /* CustomTextFields.swift */; };
 		F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */; };
 		F8EEE87F27792BA000BAFD30 /* KickbackAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EEE87E27792BA000BAFD30 /* KickbackAppApp.swift */; };
 		F8EEE88127792BA000BAFD30 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EEE88027792BA000BAFD30 /* ContentView.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F849417F27C006F200CCB163 /* CustomTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFields.swift; sourceTree = "<group>"; };
 		F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		F8EEE87B27792BA000BAFD30 /* KickbackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KickbackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8EEE87E27792BA000BAFD30 /* KickbackAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickbackAppApp.swift; sourceTree = "<group>"; };
@@ -75,6 +77,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F849417E27C006D400CCB163 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F849418127C009CE00CCB163 /* Custom Colors */,
+				F849417F27C006F200CCB163 /* CustomTextFields.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F849418127C009CE00CCB163 /* Custom Colors */ = {
+			isa = PBXGroup;
+			children = (
+				F8EEE8A827792BB100BAFD30 /* ColorExtension.swift */,
+			);
+			path = "Custom Colors";
+			sourceTree = "<group>";
+		};
 		F8EEE87227792BA000BAFD30 = {
 			isa = PBXGroup;
 			children = (
@@ -98,7 +117,7 @@
 		F8EEE87D27792BA000BAFD30 /* KickbackApp */ = {
 			isa = PBXGroup;
 			children = (
-				F8EEE8A827792BB100BAFD30 /* ColorExtension.swift */,
+				F849417E27C006D400CCB163 /* Custom Views */,
 				F8EEE87E27792BA000BAFD30 /* KickbackAppApp.swift */,
 				F8EEE88027792BA000BAFD30 /* ContentView.swift */,
 				F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */,
@@ -264,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8EEE8A927792BB100BAFD30 /* ColorExtension.swift in Sources */,
+				F849418027C006F200CCB163 /* CustomTextFields.swift in Sources */,
 				F8EEE88127792BA000BAFD30 /* ContentView.swift in Sources */,
 				F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */,
 				F8EEE87F27792BA000BAFD30 /* KickbackAppApp.swift in Sources */,
@@ -354,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -409,7 +429,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -435,6 +455,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,6 +485,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
