@@ -24,26 +24,33 @@ struct ContentView_Previews: PreviewProvider {
 struct Home: View {
     
     @State var index = 0
+    @State private var willMoveToNextScreen: Bool = false
     
     var body: some View{
         NavigationView{
             GeometryReader{_ in
-            
+                
+                NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true), isActive: $willMoveToNextScreen) { }
+                
                 VStack{
                     Spacer()
                     Image("kickBackLogo")
                         .resizable()
                         .frame(width: 80, height: 96)
                         .cornerRadius(10)
-                        //.frame(maxWidth: .infinity, maxHeight: .infinity)
+                    //.frame(maxWidth: .infinity, maxHeight: .infinity)
                     Spacer()
                     ZStack{
-                    
-                    SignUP(index: self.$index)
-                    //changing view order
-                        .zIndex(Double(self.index))
-                    Login(index: self.$index)
-                    
+                        
+                        SignUP(index: self.$index, onLoginButtonTap: {
+                            willMoveToNextScreen = true
+                        })
+                        //changing view order
+                            .zIndex(Double(self.index))
+                        Login(index: self.$index, onLoginButtonTap: {
+                            willMoveToNextScreen = true
+                        })
+//                        Login(index: self.$index)
                     }
                     /// Alternative login options
                     HStack(spacing: 15){
@@ -58,7 +65,7 @@ struct Home: View {
                     }
                     .padding(.horizontal, 20)
                     .padding(.top, 50)
-                
+                    
                     HStack(spacing: 25){
                         Button(action: {
                             /// When clicking on the button this code block will trigger
@@ -96,10 +103,10 @@ struct Home: View {
             }
             .background(Color(CGColor.white).edgesIgnoringSafeArea(.all))
             .navigationTitle("")
-            }
         }
     }
-    
+}
+
 
 // Curve
 struct CShape : Shape {
@@ -136,8 +143,12 @@ struct Login : View{
     @State var pass = ""
     @Binding var index : Int
     
+    /// Call back property
+    var onLoginButtonTap: () -> ()
+    
+    
     var body: some View{
-
+        
         ZStack(alignment: .bottom){
             VStack{
                 
@@ -162,7 +173,7 @@ struct Login : View{
                 VStack{
                     HStack(spacing: 15){
                         Image(systemName: "envelope.fill")
-                        .foregroundColor(Color.gray)
+                            .foregroundColor(Color.gray)
                         
                         TextField("Email Address", text: self.$email)
                     }
@@ -175,7 +186,7 @@ struct Login : View{
                 VStack{
                     HStack(spacing: 15){
                         Image(systemName: "eye.slash.fill")
-                        .foregroundColor(Color.gray)
+                            .foregroundColor(Color.gray)
                         
                         SecureField("Password", text: self.$pass)
                     }
@@ -210,7 +221,7 @@ struct Login : View{
             
             //Button
             Button(action: {
-                
+                onLoginButtonTap()
             }) {
                 Text("LOGIN")
                     .foregroundColor(.white)
@@ -219,7 +230,7 @@ struct Login : View{
                     .padding(.horizontal, 50)
                     .background(Color.black)
                     .clipShape(Capsule())
-                    //shadow of the button
+                //shadow of the button
                     .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
             }
             // moving the view down
@@ -235,6 +246,9 @@ struct SignUP : View{
     @State var newPass = ""
     @State var rePass = ""
     @Binding var index : Int
+    
+    /// Call back property
+    var onLoginButtonTap: () -> ()
     
     var body: some View{
         ZStack(alignment: .bottom){
@@ -263,7 +277,7 @@ struct SignUP : View{
                     HStack(spacing: 15){
                         
                         Image(systemName: "envelope.fill")
-                        .foregroundColor(Color.gray)
+                            .foregroundColor(Color.gray)
                         
                         TextField("Email Address", text: self.$email)
                     }
@@ -276,7 +290,7 @@ struct SignUP : View{
                 VStack{
                     HStack(spacing: 15){
                         Image(systemName: "eye.slash.fill")
-                        .foregroundColor(Color.gray)
+                            .foregroundColor(Color.gray)
                         
                         SecureField("New Password", text: self.$newPass)
                     }
@@ -290,7 +304,7 @@ struct SignUP : View{
                 VStack{
                     HStack(spacing: 15){
                         Image(systemName: "eye.slash.fill")
-                        .foregroundColor(Color.gray)
+                            .foregroundColor(Color.gray)
                         
                         SecureField("Confirm Password", text: self.$rePass)
                     }
@@ -317,7 +331,7 @@ struct SignUP : View{
             
             //Button
             Button(action: {
-                
+                onLoginButtonTap()
             }) {
                 Text("SIGN UP")
                     .foregroundColor(.white)
@@ -326,7 +340,7 @@ struct SignUP : View{
                     .padding(.horizontal, 50)
                     .background(Color.black)
                     .clipShape(Capsule())
-                    //shadow of the button
+                //shadow of the button
                     .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
             }
             // moving the view down
@@ -334,6 +348,6 @@ struct SignUP : View{
             //hiding button view when its in background
             .opacity(self.index == 1 ? 1 : 0)
         }
-
+        
     }
 }

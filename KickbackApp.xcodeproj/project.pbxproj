@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		957E9A6527C64EF000DE389A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957E9A6427C64EF000DE389A /* HomeView.swift */; };
 		F849418027C006F200CCB163 /* CustomTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849417F27C006F200CCB163 /* CustomTextFields.swift */; };
 		F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */; };
 		F8EEE87F27792BA000BAFD30 /* KickbackAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EEE87E27792BA000BAFD30 /* KickbackAppApp.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		957E9A6427C64EF000DE389A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F849417F27C006F200CCB163 /* CustomTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFields.swift; sourceTree = "<group>"; };
 		F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		F8EEE87B27792BA000BAFD30 /* KickbackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KickbackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		957E9A6327C64DA100DE389A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				957E9A6427C64EF000DE389A /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		F849417E27C006D400CCB163 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		F8EEE87D27792BA000BAFD30 /* KickbackApp */ = {
 			isa = PBXGroup;
 			children = (
+				957E9A6327C64DA100DE389A /* Views */,
 				F849417E27C006D400CCB163 /* Custom Views */,
 				F8EEE87E27792BA000BAFD30 /* KickbackAppApp.swift */,
 				F8EEE88027792BA000BAFD30 /* ContentView.swift */,
@@ -285,6 +296,7 @@
 				F8EEE8A927792BB100BAFD30 /* ColorExtension.swift in Sources */,
 				F849418027C006F200CCB163 /* CustomTextFields.swift in Sources */,
 				F8EEE88127792BA000BAFD30 /* ContentView.swift in Sources */,
+				957E9A6527C64EF000DE389A /* HomeView.swift in Sources */,
 				F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */,
 				F8EEE87F27792BA000BAFD30 /* KickbackAppApp.swift in Sources */,
 			);
