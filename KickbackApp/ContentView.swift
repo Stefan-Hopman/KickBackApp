@@ -10,8 +10,6 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         Home()
-        // for light status bar
-            .preferredColorScheme(.dark)
     }
 }
 
@@ -31,9 +29,9 @@ struct Home: View {
             GeometryReader{_ in
                 
                 NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true), isActive: $willMoveToNextScreen) { }
-                
+                Spacer()
                 VStack{
-                    Spacer()
+                    
                     Image("kickBackLogo")
                         .resizable()
                         .frame(width: 80, height: 96)
@@ -96,13 +94,14 @@ struct Home: View {
                         }
                     }
                     .padding(.top, 10)
-                    Spacer()
+                    
                     Spacer()
                 }
                 .padding(.vertical)
             }
             .background(Color(CGColor.white).edgesIgnoringSafeArea(.all))
             .navigationTitle("")
+            .navigationBarHidden(true)
         }
     }
 }
