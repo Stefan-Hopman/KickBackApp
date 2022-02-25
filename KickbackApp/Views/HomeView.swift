@@ -33,8 +33,9 @@ struct HomeView: View {
                     }
             }.navigationBarHidden(true)    /// HStack closed
             
-            
-            
+            Spacer()
+                .frame(height: 10)
+            CourseListView(viewModel: .init())
             Spacer()
         }.padding(10.0)  /// VStack closed
     }

@@ -8,8 +8,8 @@
 import SwiftUI
 
 extension Color {
-    static let gray = Color(red: 0 / 255, green: 0 / 255, blue: 0 / 255)
-    static let white = Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255)
+    static let kGray = Color(red: 0 / 255, green: 0 / 255, blue: 0 / 255)
+    static let kWhite = Color(red: 255 / 255, green: 255 / 255, blue: 255 / 255)
     static let darkPink = Color(red: 213 / 255, green: 151 / 255, blue: 136 / 255)
 }
 

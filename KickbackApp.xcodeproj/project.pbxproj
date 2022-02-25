@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		957E9A6527C64EF000DE389A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957E9A6427C64EF000DE389A /* HomeView.swift */; };
+		958EBB4027C88C1C00FACB41 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EBB3F27C88C1C00FACB41 /* Course.swift */; };
+		958EBB4427C88FCF00FACB41 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EBB4327C88FCF00FACB41 /* CourseView.swift */; };
+		958EBB4627C8901F00FACB41 /* CourseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EBB4527C8901F00FACB41 /* CourseViewModel.swift */; };
+		958EBB4A27C8957F00FACB41 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EBB4927C8957F00FACB41 /* CourseListViewModel.swift */; };
+		958EBB4C27C8963100FACB41 /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EBB4B27C8963100FACB41 /* CourseListView.swift */; };
 		F849418027C006F200CCB163 /* CustomTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849417F27C006F200CCB163 /* CustomTextFields.swift */; };
 		F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */; };
 		F8EEE87F27792BA000BAFD30 /* KickbackAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EEE87E27792BA000BAFD30 /* KickbackAppApp.swift */; };
@@ -39,6 +44,11 @@
 
 /* Begin PBXFileReference section */
 		957E9A6427C64EF000DE389A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		958EBB3F27C88C1C00FACB41 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		958EBB4327C88FCF00FACB41 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		958EBB4527C8901F00FACB41 /* CourseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseViewModel.swift; sourceTree = "<group>"; };
+		958EBB4927C8957F00FACB41 /* CourseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
+		958EBB4B27C8963100FACB41 /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
 		F849417F27C006F200CCB163 /* CustomTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFields.swift; sourceTree = "<group>"; };
 		F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		F8EEE87B27792BA000BAFD30 /* KickbackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KickbackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,8 +93,34 @@
 			isa = PBXGroup;
 			children = (
 				957E9A6427C64EF000DE389A /* HomeView.swift */,
+				958EBB4327C88FCF00FACB41 /* CourseView.swift */,
+				958EBB4B27C8963100FACB41 /* CourseListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		958EBB3E27C88BD300FACB41 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				958EBB3F27C88C1C00FACB41 /* Course.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		958EBB4127C88EF500FACB41 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				958EBB4527C8901F00FACB41 /* CourseViewModel.swift */,
+				958EBB4927C8957F00FACB41 /* CourseListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		958EBB4227C88F0400FACB41 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		F849417E27C006D400CCB163 /* Custom Views */ = {
@@ -127,6 +163,9 @@
 		F8EEE87D27792BA000BAFD30 /* KickbackApp */ = {
 			isa = PBXGroup;
 			children = (
+				958EBB4227C88F0400FACB41 /* Services */,
+				958EBB4127C88EF500FACB41 /* ViewModels */,
+				958EBB3E27C88BD300FACB41 /* Models */,
 				957E9A6327C64DA100DE389A /* Views */,
 				F849417E27C006D400CCB163 /* Custom Views */,
 				F8EEE87E27792BA000BAFD30 /* KickbackAppApp.swift */,
@@ -294,11 +333,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8EEE8A927792BB100BAFD30 /* ColorExtension.swift in Sources */,
+				958EBB4027C88C1C00FACB41 /* Course.swift in Sources */,
 				F849418027C006F200CCB163 /* CustomTextFields.swift in Sources */,
 				F8EEE88127792BA000BAFD30 /* ContentView.swift in Sources */,
 				957E9A6527C64EF000DE389A /* HomeView.swift in Sources */,
 				F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */,
+				958EBB4627C8901F00FACB41 /* CourseViewModel.swift in Sources */,
+				958EBB4A27C8957F00FACB41 /* CourseListViewModel.swift in Sources */,
 				F8EEE87F27792BA000BAFD30 /* KickbackAppApp.swift in Sources */,
+				958EBB4427C88FCF00FACB41 /* CourseView.swift in Sources */,
+				958EBB4C27C8963100FACB41 /* CourseListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
