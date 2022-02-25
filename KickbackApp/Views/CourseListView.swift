@@ -15,14 +15,18 @@ struct CourseListView: View {
         VStack(alignment: .leading) {
             HStack {
                 Text(viewModel.courseList.title)
+                    .font(.title2).bold()
                 Spacer()
                 Button("See more") {
                     
                 }
-            }
+            }.padding(10)
             List(viewModel.courseList.courses) {course in
-                Text(course.title)
+//                Text(course.title)
+                CourseView(viewModel: .init(course))
             }
+            .padding(0.0)
+            Spacer()
         }
     }
 }

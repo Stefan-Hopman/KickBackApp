@@ -8,5 +8,11 @@
 import Foundation
 
 final class CourseListViewModel: ObservableObject {
-    let courseList: CourseList = testCourseList
+    var courseList: CourseList = testCourseList
+    
+    init() { }
+    
+    init(_ courseList: CourseList) {
+        self.courseList = courseList
+    }
 }

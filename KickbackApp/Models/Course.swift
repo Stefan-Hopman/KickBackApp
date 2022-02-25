@@ -28,9 +28,9 @@ struct CourseList {
 let course: Course = .init(imagePath: "course", title: "Test title", instructorName: "Joga")
 let testCourse: Course = .init(imagePath: "course", title: "Test title", instructorName: "Joga")
 
-let testCourseList: CourseList = .init(title: "Adjust course", courses: [course, course], rightButtonTitle: "See more")
+let testCourseList: CourseList = .init(title: "Upcoming classes", courses: [course, course], rightButtonTitle: "See more")
 
-var list: [CourseList] = [
+var allCoursesList: [CourseList] = [
     .init(title: "Adjust course", courses: [course, course], rightButtonTitle: "See more"),
     .init(title: "Adjust course2", courses: [course, course], rightButtonTitle: "See all")
 ]

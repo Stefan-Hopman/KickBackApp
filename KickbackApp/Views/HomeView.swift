@@ -35,7 +35,11 @@ struct HomeView: View {
             
             Spacer()
                 .frame(height: 10)
-            CourseListView(viewModel: .init())
+            CourseListView(viewModel: .init(testCourseList))
+//            List {
+//                CourseListView(viewModel: .init(testCourseList))
+//                CourseListView(viewModel: .init(testCourseList))
+//            }
             Spacer()
         }.padding(10.0)  /// VStack closed
     }

@@ -16,12 +16,12 @@ struct CourseView: View {
             
             Image(viewModel.course.imagePath)
                 .resizable()
-                .frame(width: 300.0, height: 200.0)
+                .frame(width: 200.0, height: 150.0)
                 .cornerRadius(20)
                 .clipped()
             
             VStack(alignment: .leading) {
-                Text(viewModel.course.title).font(.title)
+                Text(viewModel.course.title).font(.title3)
                 Text(viewModel.course.instructorName).font(.headline).foregroundColor(Color.gray)
             }
                 
