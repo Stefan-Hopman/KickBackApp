@@ -17,16 +17,19 @@ struct CourseListView: View {
                 Text(viewModel.courseList.title)
                     .font(.title2).bold()
                 Spacer()
-                Button("See more") {
+                Button(viewModel.courseList.rightButtonTitle) {
                     
                 }
             }.padding(10)
-            List(viewModel.courseList.courses) {course in
-//                Text(course.title)
-                CourseView(viewModel: .init(course))
+
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 10) {
+                    ForEach(viewModel.courseList.courses, id: \.id) { course in
+                        CourseView(viewModel: .init(course))
+                    }
+                }
             }
-            .padding(0.0)
-            Spacer()
+//            Spacer()
         }
     }
 }

@@ -15,7 +15,8 @@ struct Course: Identifiable {
     let isFav: Bool = false
 }
 
-struct CourseList {
+struct CourseList: Identifiable {
+    var id = UUID()
     let title: String
     let courses: [Course]
     let rightButtonTitle: String
@@ -31,6 +32,11 @@ let testCourse: Course = .init(imagePath: "course", title: "Test title", instruc
 let testCourseList: CourseList = .init(title: "Upcoming classes", courses: [course, course], rightButtonTitle: "See more")
 
 var allCoursesList: [CourseList] = [
-    .init(title: "Adjust course", courses: [course, course], rightButtonTitle: "See more"),
-    .init(title: "Adjust course2", courses: [course, course], rightButtonTitle: "See all")
+    .init(title: "Upcoming Classes", courses: [.init(imagePath: "course", title: "Kick Boxing", instructorName: "Jack denial"), .init(imagePath: "course", title: "Judo", instructorName: "Shing chang")], rightButtonTitle: "See more"),
+    .init(title: "Past Classes", courses: [.init(imagePath: "course", title: "Taiwando", instructorName: "Alan walker"), .init(imagePath: "course", title: "Wrestling", instructorName: "the undertaker")], rightButtonTitle: "See all"),
+        .init(title: "Favourite Classes", courses: [.init(imagePath: "course", title: "Taiwando", instructorName: "Alan walker"), .init(imagePath: "course", title: "Wrestling", instructorName: "the undertaker")], rightButtonTitle: "See all"),
+        .init(title: "Past Classes", courses: [.init(imagePath: "course", title: "Taiwando", instructorName: "Alan walker"), .init(imagePath: "course", title: "Wrestling", instructorName: "the undertaker")], rightButtonTitle: "See all"),
+        .init(title: "Past Classes", courses: [.init(imagePath: "course", title: "Taiwando", instructorName: "Alan walker"), .init(imagePath: "course", title: "Wrestling", instructorName: "the undertaker")], rightButtonTitle: "See all"),
+        .init(title: "Past Classes", courses: [.init(imagePath: "course", title: "Taiwando", instructorName: "Alan walker"), .init(imagePath: "course", title: "Wrestling", instructorName: "the undertaker")], rightButtonTitle: "See all"),
+        .init(title: "Past Classes", courses: [.init(imagePath: "course", title: "Taiwando", instructorName: "Alan walker"), .init(imagePath: "course", title: "Wrestling", instructorName: "the undertaker")], rightButtonTitle: "See all")
 ]
