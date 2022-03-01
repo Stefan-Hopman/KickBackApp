@@ -7,7 +7,21 @@
 
 import SwiftUI
 
+struct NoButtonStyle: ButtonStyle {
+    func makeBody(configuration: Self.Configuration) -> some View {
+        configuration.label
+    }
+}
+
 struct HomeView: View {
+    
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        // this can be done in `onAppear` modifier if you need to restore the appereance later on `onDisappear`
+            UITableView.appearance().tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
+        UITableView.appearance().separatorStyle = .none
+//        return self
+        }
     
     @ObservedObject var viewModel: HomeViewModel
     
@@ -38,14 +52,27 @@ struct HomeView: View {
             
             Spacer()
                 .frame(height: 10)
-            List(viewModel.courseList) { course in
-                if #available(iOS 15.0, *) {
-                    CourseListView(viewModel: CourseListViewModel(course)).listRowSeparator(.hidden)
-                } else {
-                    // Fallback on earlier versions
+//            List(viewModel.courseList) { course in
+//                CourseListView(viewModel: CourseListViewModel(course)).listRowInsets(EdgeInsets())
+//                    .listRowBackground(Color.clear)
+//            }
+//            .listStyle(GroupedListStyle())
+            
+            
+            List {
+                ForEach(viewModel.courseList) { course in
+                    CourseListView(viewModel: CourseListViewModel(course))
+                        .background(Color.white)
+                        .listRowInsets(EdgeInsets())
                 }
+//                .background(Color.white)
             }
-            .listStyle(.plain)
+            .listStyle(GroupedListStyle())
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+//            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+//                .listStyle(PlainListStyle())
+                
+            
             Button(action: {
                     print("sign up bin tapped")
                 }) {
