@@ -28,7 +28,10 @@ struct Home: View {
         NavigationView{
             GeometryReader{_ in
                 
-                NavigationLink(destination: HomeView(viewModel: HomeViewModel()).navigationBarBackButtonHidden(true), isActive: $willMoveToNextScreen) { }
+//                NavigationLink(destination: HomeView(viewModel: HomeViewModel()).navigationBarBackButtonHidden(true), isActive: $willMoveToNextScreen) { }
+                
+                NavigationLink(destination: TabbarView().navigationBarBackButtonHidden(true), isActive: $willMoveToNextScreen) { }
+                
                 Spacer()
                 VStack{
                     
