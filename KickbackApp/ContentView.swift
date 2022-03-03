@@ -106,6 +106,9 @@ struct Home: View {
             .navigationTitle("")
             .navigationBarHidden(true)
         }
+        .navigationBarHidden(true)
+        .accentColor(.black)
+        
     }
 }
 
@@ -204,6 +207,7 @@ struct Login : View{
                             .foregroundColor(Color.white.opacity(0.6))
                         
                     }
+                    
                 }
                 .padding(.horizontal)
                 .padding(.top, 30)

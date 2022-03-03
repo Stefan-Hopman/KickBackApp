@@ -10,7 +10,11 @@ import SwiftUI
 struct ForgotPasswordView: View {
     @State var emailAddress: String = ""
     @State private var textFieldIsEditing = false /// Keeps track of whether the text field is being edited or not
+   
+    @State private var willMoveToNextScreen: Bool = false
     var body: some View {
+        NavigationLink(destination: ContentView().navigationBarBackButtonHidden(true), isActive: $willMoveToNextScreen) { }
+        
         VStack{
             Spacer()
             Image("ForgotPasswordIcon")
@@ -47,7 +51,7 @@ struct ForgotPasswordView: View {
                 .foregroundColor(Color.black)
             
             Button(action: {
-                
+                onConfirmButtonTapped(nextScreen: &willMoveToNextScreen)
             }) {
                 Text("Confirm")
                     .foregroundColor(.white)
@@ -59,6 +63,7 @@ struct ForgotPasswordView: View {
                     //shadow of the button
                     .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
             }
+            
             .padding(.top, 2)
             .padding(.bottom, 40)
             Spacer()
@@ -68,9 +73,16 @@ struct ForgotPasswordView: View {
             
             
         }
+        
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(CGColor.white).edgesIgnoringSafeArea(.all))
     }
+    
+}
+
+/// Private Function
+func onConfirmButtonTapped(nextScreen: inout Bool){
+    nextScreen = true
 }
 
 struct ForgotPasswordView_Previews: PreviewProvider {
