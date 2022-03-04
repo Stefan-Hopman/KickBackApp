@@ -106,6 +106,9 @@ struct Home: View {
             .navigationTitle("")
             .navigationBarHidden(true)
         }
+        .navigationBarHidden(true)
+        .accentColor(.black)
+        
     }
 }
 
@@ -159,7 +162,7 @@ struct Login : View{
                     VStack(spacing: 10){
                         
                         Text("Login")
-                            .foregroundColor(self.index == 0 ? .white : .gray)
+                            .foregroundColor(self.index == 0 ? .white : .black)
                             .font(.title)
                             .fontWeight(.bold)
                         
@@ -175,7 +178,7 @@ struct Login : View{
                 VStack{
                     HStack(spacing: 15){
                         Image(systemName: "envelope.fill")
-                            .foregroundColor(Color.gray)
+                            .foregroundColor(Color.black)
                         
                         TextField("Email Address", text: self.$email)
                     }
@@ -188,7 +191,7 @@ struct Login : View{
                 VStack{
                     HStack(spacing: 15){
                         Image(systemName: "eye.slash.fill")
-                            .foregroundColor(Color.gray)
+                            .foregroundColor(Color.black)
                         
                         SecureField("Password", text: self.$pass)
                     }
@@ -204,6 +207,7 @@ struct Login : View{
                             .foregroundColor(Color.white.opacity(0.6))
                         
                     }
+                    
                 }
                 .padding(.horizontal)
                 .padding(.top, 30)
@@ -263,7 +267,7 @@ struct SignUP : View{
                     VStack(spacing: 10){
                         
                         Text("SignUp")
-                            .foregroundColor(self.index == 1 ? .white : .gray)
+                            .foregroundColor(self.index == 1 ? .white : .black)
                             .font(.title)
                             .fontWeight(.bold)
                         
@@ -279,7 +283,7 @@ struct SignUP : View{
                     HStack(spacing: 15){
                         
                         Image(systemName: "envelope.fill")
-                            .foregroundColor(Color.gray)
+                            .foregroundColor(Color.black)
                         
                         TextField("Email Address", text: self.$email)
                     }
@@ -292,7 +296,7 @@ struct SignUP : View{
                 VStack{
                     HStack(spacing: 15){
                         Image(systemName: "eye.slash.fill")
-                            .foregroundColor(Color.gray)
+                            .foregroundColor(Color.black)
                         
                         SecureField("New Password", text: self.$newPass)
                     }
@@ -306,7 +310,7 @@ struct SignUP : View{
                 VStack{
                     HStack(spacing: 15){
                         Image(systemName: "eye.slash.fill")
-                            .foregroundColor(Color.gray)
+                            .foregroundColor(Color.black)
                         
                         SecureField("Confirm Password", text: self.$rePass)
                     }
