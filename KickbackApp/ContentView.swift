@@ -28,9 +28,10 @@ struct Home: View {
         NavigationView{
             GeometryReader{_ in
                 
-//                NavigationLink(destination: HomeView(viewModel: HomeViewModel()).navigationBarBackButtonHidden(true), isActive: $willMoveToNextScreen) { }
-                
-                NavigationLink(destination: TabbarView().navigationBarBackButtonHidden(true), isActive: $willMoveToNextScreen) { }
+                NavigationLink(destination: TabbarView()
+                                .navigationBarHidden(true)
+                                .navigationBarTitle("")
+                               , isActive: $willMoveToNextScreen) { }
                 
                 Spacer()
                 VStack{
@@ -51,7 +52,7 @@ struct Home: View {
                         Login(index: self.$index, onLoginButtonTap: {
                             willMoveToNextScreen = true
                         })
-//                        Login(index: self.$index)
+                        //                        Login(index: self.$index)
                     }
                     /// Alternative login options
                     HStack(spacing: 15){

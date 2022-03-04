@@ -9,24 +9,34 @@ import SwiftUI
 
 struct TabbarView: View {
     var body: some View {
-        
-        ZStack {
+        NavigationView {
             TabView {
                 HomeView(viewModel: .init()).tabItem {
                     Label("Home", systemImage: "house")
-                }.navigationBarBackButtonHidden(true)
+                }
+                .navigationBarHidden(true)
+                .navigationBarTitle("")
+                
                 BookClassesView().tabItem {
                     Label("Book Classes", systemImage: "bag")
-                }.navigationBarBackButtonHidden(true)
+                }
+                .navigationBarHidden(true)
+                .navigationBarTitle("")
+                
                 AboutUsView().tabItem {
                     Label("About Us", systemImage: "person")
-                }.navigationBarBackButtonHidden(true)
+                }
+                .navigationBarHidden(true)
+                .navigationBarTitle("")
+                
                 PriceView().tabItem {
                     Label("Pricing", systemImage: "creditcard")
-                }.navigationBarBackButtonHidden(true)
-                
+                }
+                .navigationBarHidden(true)
+                .navigationBarTitle("")
             }
-        }.background(Color.black)
+            
+        }
     }
 }
 

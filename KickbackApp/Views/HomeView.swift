@@ -26,16 +26,9 @@ struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
-        
-//            List(viewModel.courseList) { course in
-//                CourseListView(viewModel: CourseListViewModel(course)).listRowInsets(EdgeInsets())
-//                    .listRowBackground(Color.clear)
-//            }
-//            .listStyle(GroupedListStyle())
-            
             
         ScrollView(.vertical, showsIndicators: false) {
-                VStack {
+            VStack(spacing: 0.0) {
                     HStack {
                         VStack(alignment: .leading) {
                             Text ("Hi, Jamie")
@@ -82,7 +75,7 @@ struct HomeView: View {
                             .fontWeight(.bold)
                             .padding(.vertical)
                             .padding(.horizontal, 50)
-                            .background(Color.black)
+                            .background(Color.red)
                             .clipShape(Capsule())
                             .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
                         }
@@ -94,19 +87,10 @@ struct HomeView: View {
             .listStyle(GroupedListStyle())
             
             .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
-//            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-//                .listStyle(PlainListStyle()
-            
-//            CourseListView(viewModel: .init(testCourseList))
-//            CourseListView(viewModel: .init(testCourseList))
-//            List {
-//                CourseListView(viewModel: .init(testCourseList))
-//                CourseListView(viewModel: .init(testCourseList))
-//            }
-
                 
-        }.background(Color.black)
-        
+        }.background(Color.red)
+            .padding(0)
+            .clipped()
             
             
     }
