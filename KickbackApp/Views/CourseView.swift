@@ -22,6 +22,7 @@ struct CourseView: View {
             
             VStack(alignment: .leading) {
                 Text(viewModel.course.title).font(.title3)
+                    .foregroundColor(Color.white)
                 Text(viewModel.course.instructorName).font(.headline).foregroundColor(Color.gray)
             }
                 

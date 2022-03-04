@@ -16,10 +16,13 @@ struct CourseListView: View {
             HStack {
                 Text(viewModel.courseList.title)
                     .font(.title2).bold()
+                    .foregroundColor(Color.darkPink)
+                    .foregroundColor(Color.white)
                 Spacer()
                 Button(viewModel.courseList.rightButtonTitle) {
                     
                 }
+                .foregroundColor(Color.blue)
             }.padding(10)
 
             ScrollView(.horizontal, showsIndicators: false) {
@@ -31,6 +34,7 @@ struct CourseListView: View {
             }
 //            Spacer()
         }
+        .background(Color.black)
     }
 }
 

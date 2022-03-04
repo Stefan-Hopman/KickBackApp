@@ -34,7 +34,7 @@ struct HomeView: View {
                             Text ("Hi, Jamie")
                                 .font(.title)
                                 .fontWeight(.bold)
-                                .foregroundColor(Color.white)
+                                .foregroundColor(Color.darkPink)
                                 .multilineTextAlignment(.leading)
                             Text("Welcome back!")
                                 .font(.subheadline)
@@ -43,12 +43,12 @@ struct HomeView: View {
                         Spacer()
                         Image(systemName: "person.fill")
                             .resizable()
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color.darkPink)
                             
                             .frame(width: 20, height: 20)
                             .padding(10)
                             .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                            .overlay(Circle().stroke(Color.darkPink, lineWidth: 1))
                             .shadow(radius: 10)
                             .onTapGesture {
                                 print("Profile image tapped")
