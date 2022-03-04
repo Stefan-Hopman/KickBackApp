@@ -75,7 +75,7 @@ struct HomeView: View {
                             .fontWeight(.bold)
                             .padding(.vertical)
                             .padding(.horizontal, 50)
-                            .background(Color.red)
+                            .background(Color.black)
                             .clipShape(Capsule())
                             .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
                         }
@@ -88,7 +88,7 @@ struct HomeView: View {
             
             .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
                 
-        }.background(Color.red)
+        }.background(Color.black)
             .padding(0)
             .clipped()
             
