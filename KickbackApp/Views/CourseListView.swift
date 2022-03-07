@@ -34,7 +34,7 @@ struct CourseListView: View {
             }
 //            Spacer()
         }
-        .background(Color.black)
+        .background(Color.lightBlack)
     }
 }
 

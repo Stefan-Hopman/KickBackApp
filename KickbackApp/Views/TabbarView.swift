@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct TabbarView: View {
+    
+    init() {
+        UITabBar.appearance().unselectedItemTintColor = UIColor.lightGray
+    }
+    
     var body: some View {
         NavigationView {
             TabView {
@@ -35,7 +40,7 @@ struct TabbarView: View {
                 .navigationBarHidden(true)
                 .navigationBarTitle("")
             }
-            
+            .accentColor(.white)
         }
     }
 }

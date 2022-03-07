@@ -27,70 +27,73 @@ struct HomeView: View {
     
     var body: some View {
             
-        ScrollView(.vertical, showsIndicators: false) {
-            VStack(spacing: 0.0) {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text ("Hi, Jamie")
-                                .font(.title)
-                                .fontWeight(.bold)
+        ZStack {
+            Color.lightBlack.ignoresSafeArea()
+            ScrollView(.vertical, showsIndicators: false) {
+                VStack(spacing: 0.0) {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text ("Hi, Jamie")
+                                    .font(.title)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color.darkPink)
+                                    .multilineTextAlignment(.leading)
+                                Text("Welcome back!")
+                                    .font(.subheadline)
+                                    .foregroundColor(Color.white)
+                            }   /// VStack closed
+                            Spacer()
+                            Image(systemName: "person.fill")
+                                .resizable()
                                 .foregroundColor(Color.darkPink)
-                                .multilineTextAlignment(.leading)
-                            Text("Welcome back!")
-                                .font(.subheadline)
-                                .foregroundColor(Color.white)
-                        }   /// VStack closed
+                                
+                                .frame(width: 20, height: 20)
+                                .padding(10)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.darkPink, lineWidth: 1))
+                                .shadow(radius: 10)
+                                .onTapGesture {
+                                    print("Profile image tapped")
+                                }
+                        }
+                        .navigationBarHidden(true)    /// HStack closed
+                        .padding(.leading, 10)
+                        .padding(.trailing, 10)
+                        
                         Spacer()
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .foregroundColor(Color.darkPink)
-                            
-                            .frame(width: 20, height: 20)
-                            .padding(10)
-                            .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.darkPink, lineWidth: 1))
-                            .shadow(radius: 10)
-                            .onTapGesture {
-                                print("Profile image tapped")
-                            }
+                            .frame(height: 10)
+                    ForEach(viewModel.courseList) { course in
+                        CourseListView(viewModel: CourseListViewModel(course))
+                            .background(Color.white)
+                            .listRowInsets(EdgeInsets())
                     }
-                    .navigationBarHidden(true)    /// HStack closed
-                    .padding(.leading, 10)
-                    .padding(.trailing, 10)
-                    
-                    Spacer()
-                        .frame(height: 10)
-                ForEach(viewModel.courseList) { course in
-                    CourseListView(viewModel: CourseListViewModel(course))
-                        .background(Color.white)
-                        .listRowInsets(EdgeInsets())
-                }
-                .padding(.bottom, 10)
-                VStack(alignment: .center){
-                    Button(action: {
-                        print("Button Tapped")
-                    }) {
-                        Text("BOOK NOW")
-                            .foregroundColor(.white)
-                            .fontWeight(.bold)
-                            .padding(.vertical)
-                            .padding(.horizontal, 50)
-                            .background(Color.black)
-                            .clipShape(Capsule())
-                            .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+                    .padding(.bottom, 10)
+                    VStack(alignment: .center){
+                        Button(action: {
+                            print("Button Tapped")
+                        }) {
+                            Text("BOOK NOW")
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .padding(.vertical)
+                                .padding(.horizontal, 50)
+                                .background(Color.black)
+                                .clipShape(Capsule())
+                                .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+                            }
+                        
                         }
                     
-                    }
+                }
+                    
+                .listStyle(GroupedListStyle())
                 
-            }
-                
-            .listStyle(GroupedListStyle())
-            
-            .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
-                
-        }.background(Color.black)
-            .padding(0)
+                .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
+                    
+            }.background(Color.lightBlack)
+                .padding(0)
             .clipped()
+        }
             
             
     }
