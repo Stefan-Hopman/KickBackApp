@@ -10,6 +10,10 @@ import SwiftUI
 struct CourseListView: View {
     @ObservedObject var viewModel: CourseListViewModel
     
+    /// Call back property
+    var onButtonTap: ((CourseList) -> ())?
+    var onCellTap: ((Course) -> ())?
+    
     var body: some View {
         
         VStack(alignment: .leading) {
@@ -20,7 +24,7 @@ struct CourseListView: View {
                     .foregroundColor(Color.white)
                 Spacer()
                 Button(viewModel.courseList.rightButtonTitle) {
-                    
+                    onButtonTap?(viewModel.courseList)
                 }
                 .foregroundColor(Color.blue)
             }.padding(10)
@@ -29,6 +33,10 @@ struct CourseListView: View {
                 HStack(spacing: 10) {
                     ForEach(viewModel.courseList.courses, id: \.id) { course in
                         CourseView(viewModel: .init(course))
+                            .onTapGesture {
+                                print("Cell tapped", course.title)
+                                onCellTap?(course)
+                            }
                     }
                 }
             }

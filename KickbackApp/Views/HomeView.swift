@@ -26,11 +26,11 @@ struct HomeView: View {
     @ObservedObject var viewModel: HomeViewModel
     
     var body: some View {
-            
-        ZStack {
-            Color.lightBlack.ignoresSafeArea()
-            ScrollView(.vertical, showsIndicators: false) {
-                VStack(spacing: 0.0) {
+        NavigationView {
+            ZStack {
+                Color.lightBlack.ignoresSafeArea()
+                ScrollView(.vertical, showsIndicators: false) {
+                    VStack(spacing: 0.0) {
                         HStack {
                             VStack(alignment: .leading) {
                                 Text ("Hi, Jamie")
@@ -46,7 +46,7 @@ struct HomeView: View {
                             Image(systemName: "person.fill")
                                 .resizable()
                                 .foregroundColor(Color.darkPink)
-                                
+                            
                                 .frame(width: 20, height: 20)
                                 .padding(10)
                                 .clipShape(Circle())
@@ -62,40 +62,47 @@ struct HomeView: View {
                         
                         Spacer()
                             .frame(height: 10)
-                    ForEach(viewModel.courseList) { course in
-                        CourseListView(viewModel: CourseListViewModel(course))
-                            .background(Color.white)
-                            .listRowInsets(EdgeInsets())
-                    }
-                    .padding(.bottom, 10)
-                    VStack(alignment: .center){
-                        Button(action: {
-                            print("Button Tapped")
-                        }) {
-                            Text("BOOK NOW")
-                                .foregroundColor(.white)
-                                .fontWeight(.bold)
-                                .padding(.vertical)
-                                .padding(.horizontal, 50)
-                                .background(Color.black)
-                                .clipShape(Capsule())
-                                .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+                        ForEach(viewModel.courseList) { course in
+                            //                        CourseListView(viewModel: CourseListViewModel(course)) {_ in
+                            //                            print("See more option tapped")
+                            //                        }
+                            //                        NavigationLink("") {
+                            CourseListView(viewModel: CourseListViewModel(course)) { List in
+                                
+                            } onCellTap: { course in
+                                
                             }
-                        
+                            //                        }
                         }
+                        .padding(.bottom, 10)
+                        VStack(alignment: .center){
+                            Button(action: {
+                                print("Button Tapped")
+                            }) {
+                                Text("BOOK NOW")
+                                    .foregroundColor(.white)
+                                    .fontWeight(.bold)
+                                    .padding(.vertical)
+                                    .padding(.horizontal, 50)
+                                    .background(Color.black)
+                                    .clipShape(Capsule())
+                                    .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+                            }
+                            
+                        }
+                        
+                    }
                     
-                }
+                    .listStyle(GroupedListStyle())
                     
-                .listStyle(GroupedListStyle())
-                
-                .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
+                    .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
                     
-            }.background(Color.lightBlack)
-                .padding(0)
-            .clipped()
+                }.background(Color.lightBlack)
+                    .padding(0)
+                    .clipped()
+            }
         }
-            
-            
+        
     }
        
 }
