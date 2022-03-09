@@ -25,6 +25,7 @@ struct HomeView: View {
     
     @ObservedObject var viewModel: HomeViewModel
     
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -66,13 +67,13 @@ struct HomeView: View {
                             //                        CourseListView(viewModel: CourseListViewModel(course)) {_ in
                             //                            print("See more option tapped")
                             //                        }
-                            //                        NavigationLink("") {
-                            CourseListView(viewModel: CourseListViewModel(course)) { List in
-                                
-                            } onCellTap: { course in
-                                
-                            }
-                            //                        }
+//                            NavigationLink("") {
+                                CourseListView(viewModel: CourseListViewModel(course)) { List in
+                                    
+                                } onCellTap: { course in
+                                    
+                                }
+//                            }
                         }
                         .padding(.bottom, 10)
                         VStack(alignment: .center){
