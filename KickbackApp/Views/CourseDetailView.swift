@@ -7,19 +7,41 @@
 
 import SwiftUI
 
+typealias Closure = (() -> ())?
+
 struct CourseDetailView: View {
     @ObservedObject var viewModel: CourseViewModel
     
+    var backButtonTapped: Closure
     var body: some View {
-        VStack {
-            Text("This is course Detail view")
-            Text(viewModel.course.title)
+        ZStack {
+            Color.lightBlack.ignoresSafeArea()
+            VStack {
+                HStack {
+                    Button(action: {
+                        print("Back Button Tapped")
+                        backButtonTapped?()
+                    }) {
+                        Image(systemName: "arrow.left")
+                            .frame(width: 40, height: 40, alignment: .center)
+                            .foregroundColor(Color.white)
+//                        Text("Back").foregroundColor(Color.white)
+                    }
+                    Spacer()
+                }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                Spacer()
+                Text("This is course Detail view")
+                    .foregroundColor(Color.white)
+                Text(viewModel.course.title).foregroundColor(Color.white)
+                Spacer()
+            }
+            
         }
     }
 }
 
 struct CourseDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        CourseDetailView(viewModel: .init())
+        CourseDetailView(viewModel: .init(), backButtonTapped: nil)
     }
 }

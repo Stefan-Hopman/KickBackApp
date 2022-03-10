@@ -25,10 +25,27 @@ struct HomeView: View {
     
     @ObservedObject var viewModel: HomeViewModel
     
+    @State private var isShowCourseDetailView: Bool = false
+    @State private var isShowAllCoursesView: Bool = false
+    @State var course: Course!
     
     var body: some View {
         NavigationView {
             ZStack {
+                NavigationLink(destination: CourseDetailView(viewModel: course == nil ? .init() : .init(course!), backButtonTapped: {
+                    isShowCourseDetailView = false
+                })
+                                .navigationBarHidden(true)
+                                .navigationBarTitle("")
+                               , isActive: $isShowCourseDetailView) { }
+                
+                NavigationLink(destination: CourseDetailView(viewModel: course == nil ? .init() : .init(course!), backButtonTapped: {
+                    isShowCourseDetailView = false
+                })
+                                .navigationBarHidden(true)
+                                .navigationBarTitle("")
+                               , isActive: $isShowAllCoursesView) { }
+                
                 Color.lightBlack.ignoresSafeArea()
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 0.0) {
@@ -64,16 +81,13 @@ struct HomeView: View {
                         Spacer()
                             .frame(height: 10)
                         ForEach(viewModel.courseList) { course in
-                            //                        CourseListView(viewModel: CourseListViewModel(course)) {_ in
-                            //                            print("See more option tapped")
-                            //                        }
-//                            NavigationLink("") {
-                                CourseListView(viewModel: CourseListViewModel(course)) { List in
-                                    
-                                } onCellTap: { course in
-                                    
-                                }
-//                            }
+                            
+                            CourseListView(viewModel: CourseListViewModel(course)) { List in
+                                
+                            } onCellTap: { course in
+                                self.course = course
+                                isShowCourseDetailView = true
+                            }
                         }
                         .padding(.bottom, 10)
                         VStack(alignment: .center){
@@ -103,6 +117,10 @@ struct HomeView: View {
                     .clipped()
             }
         }
+    }
+    
+    
+    func showCoursesList() {
         
     }
        
