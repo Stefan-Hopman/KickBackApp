@@ -28,6 +28,7 @@ struct HomeView: View {
     @State private var isShowCourseDetailView: Bool = false
     @State private var isShowAllCoursesView: Bool = false
     @State var course: Course!
+    @State var selectedCoursesList: CourseList!
     
     var body: some View {
         NavigationView {
@@ -39,8 +40,8 @@ struct HomeView: View {
                                 .navigationBarTitle("")
                                , isActive: $isShowCourseDetailView) { }
                 
-                NavigationLink(destination: CourseDetailView(viewModel: course == nil ? .init() : .init(course!), backButtonTapped: {
-                    isShowCourseDetailView = false
+                NavigationLink(destination: AllCoursesView(viewModel: selectedCoursesList == nil ? .init() : .init(selectedCoursesList!), backButtonTapped: {
+                    isShowAllCoursesView = false
                 })
                                 .navigationBarHidden(true)
                                 .navigationBarTitle("")
@@ -83,7 +84,8 @@ struct HomeView: View {
                         ForEach(viewModel.courseList) { course in
                             
                             CourseListView(viewModel: CourseListViewModel(course)) { List in
-                                
+                                self.selectedCoursesList = List
+                                isShowAllCoursesView = true
                             } onCellTap: { course in
                                 self.course = course
                                 isShowCourseDetailView = true
