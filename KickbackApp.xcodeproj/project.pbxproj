@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EAE4A0227E0B60C00998FF9 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAE4A0127E0B60C00998FF9 /* DropDownView.swift */; };
+		4EAE4A0427E0B91600998FF9 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAE4A0327E0B91600998FF9 /* DropDownButton.swift */; };
+		4EAE4A0627E0BDA600998FF9 /* DropDownItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EAE4A0527E0BDA600998FF9 /* DropDownItem.swift */; };
 		4EC2A11F27D76DC100066C99 /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2A11E27D76DC100066C99 /* CourseDetailView.swift */; };
 		4EC2A12127D76EA100066C99 /* AllCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EC2A12027D76EA100066C99 /* AllCoursesView.swift */; };
 		954C309627CF988800474EAF /* TabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954C309527CF988700474EAF /* TabbarView.swift */; };
@@ -50,6 +53,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4EAE4A0127E0B60C00998FF9 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
+		4EAE4A0327E0B91600998FF9 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
+		4EAE4A0527E0BDA600998FF9 /* DropDownItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownItem.swift; sourceTree = "<group>"; };
 		4EC2A11E27D76DC100066C99 /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
 		4EC2A12027D76EA100066C99 /* AllCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCoursesView.swift; sourceTree = "<group>"; };
 		954C309527CF988700474EAF /* TabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarView.swift; sourceTree = "<group>"; };
@@ -103,14 +109,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EAE49FF27E0AEC400998FF9 /* BookClasses */ = {
+			isa = PBXGroup;
+			children = (
+				954C309727CF9A8A00474EAF /* BookClassesView.swift */,
+			);
+			path = BookClasses;
+			sourceTree = "<group>";
+		};
+		4EAE4A0027E0B5FB00998FF9 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4EAE4A0127E0B60C00998FF9 /* DropDownView.swift */,
+				4EAE4A0327E0B91600998FF9 /* DropDownButton.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		957E9A6327C64DA100DE389A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				4EAE4A0027E0B5FB00998FF9 /* Utilities */,
+				4EAE49FF27E0AEC400998FF9 /* BookClasses */,
 				957E9A6427C64EF000DE389A /* HomeView.swift */,
 				958EBB4327C88FCF00FACB41 /* CourseView.swift */,
 				958EBB4B27C8963100FACB41 /* CourseListView.swift */,
 				954C309527CF988700474EAF /* TabbarView.swift */,
-				954C309727CF9A8A00474EAF /* BookClassesView.swift */,
 				954C309927CF9CBF00474EAF /* AboutUsView.swift */,
 				954C309B27CF9D2500474EAF /* PriceView.swift */,
 				4EC2A11E27D76DC100066C99 /* CourseDetailView.swift */,
@@ -123,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				958EBB3F27C88C1C00FACB41 /* Course.swift */,
+				4EAE4A0527E0BDA600998FF9 /* DropDownItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,13 +380,16 @@
 				957E9A6527C64EF000DE389A /* HomeView.swift in Sources */,
 				F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */,
 				954C309C27CF9D2500474EAF /* PriceView.swift in Sources */,
+				4EAE4A0227E0B60C00998FF9 /* DropDownView.swift in Sources */,
 				958EBB4627C8901F00FACB41 /* CourseViewModel.swift in Sources */,
 				4EC2A12127D76EA100066C99 /* AllCoursesView.swift in Sources */,
 				958EBB5327CCE5A100FACB41 /* HomeViewModel.swift in Sources */,
+				4EAE4A0427E0B91600998FF9 /* DropDownButton.swift in Sources */,
 				958EBB4A27C8957F00FACB41 /* CourseListViewModel.swift in Sources */,
 				F8EEE87F27792BA000BAFD30 /* KickbackAppApp.swift in Sources */,
 				958EBB4427C88FCF00FACB41 /* CourseView.swift in Sources */,
 				958EBB4C27C8963100FACB41 /* CourseListView.swift in Sources */,
+				4EAE4A0627E0BDA600998FF9 /* DropDownItem.swift in Sources */,
 				954C309627CF988800474EAF /* TabbarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
