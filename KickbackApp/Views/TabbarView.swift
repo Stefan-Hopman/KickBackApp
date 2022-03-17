@@ -12,6 +12,7 @@ struct TabbarView: View {
     init() {
         UITabBar.appearance().unselectedItemTintColor = UIColor(cgColor: CGColor.placeHolderGray)
         UITabBar.appearance().barTintColor = UIColor(Color.lightBlack)
+        
     }
     
     var body: some View {

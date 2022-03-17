@@ -9,7 +9,11 @@ import SwiftUI
 
 struct AboutUsView: View {
     var body: some View {
-        Text("About US")
+        ZStack {
+            Color.lightBlack.ignoresSafeArea()
+            Text("About US")
+                .foregroundColor(.white)
+        }
     }
 }
 

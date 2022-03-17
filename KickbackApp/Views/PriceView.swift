@@ -9,7 +9,11 @@ import SwiftUI
 
 struct PriceView: View {
     var body: some View {
-        Text("Price View")
+        ZStack {
+            Color.lightBlack.ignoresSafeArea()
+            Text("Price View")
+                .foregroundColor(.white)
+        }
     }
 }
 

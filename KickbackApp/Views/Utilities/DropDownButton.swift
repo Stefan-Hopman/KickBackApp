@@ -17,15 +17,15 @@ struct DropDownButton: View {
             onTap?()
         }) {
             HStack(alignment: .center) {
-                Text("Please Select").foregroundColor(.lightBlack)
-                Image(systemName: "chevron.down").foregroundColor(.lightBlack)
+                Text("Please Select").foregroundColor(.white)
+                Image(systemName: "chevron.down").foregroundColor(.white)
                 //.frame(width: 10)
             }
             .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
             .overlay(
                 RoundedRectangle(cornerRadius: 10.0)
                     .stroke(lineWidth: 2)
-                    .foregroundColor(.lightBlack)
+                    .foregroundColor(.white)
             )
         }
     }

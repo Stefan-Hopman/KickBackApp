@@ -12,21 +12,24 @@ struct BookClassesView: View {
     @State var showStoreDropDown: Bool = false
     
     var body: some View {
-        VStack(alignment: .center, spacing: 10.0) {
-            Text("Your Studios")
-                .font(.headline)
-                .foregroundColor(.lightBlack)
-            DropDownButton {
-                showStoreDropDown.toggle()
-            }.overlay(
-                VStack {
-                    if showStoreDropDown {
-                        Spacer(minLength: 40)
-                        DropDownView()
-                    }
-                }, alignment: .topLeading
-                
-            )
+        ZStack {
+            Color.lightBlack.ignoresSafeArea()
+            VStack(alignment: .center, spacing: 10.0) {
+                Text("Your Studios")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                DropDownButton {
+                    showStoreDropDown.toggle()
+                }.overlay(
+                    VStack {
+                        if showStoreDropDown {
+                            Spacer(minLength: 40)
+                            DropDownView()
+                        }
+                    }, alignment: .topLeading
+                    
+                )
+            }
         }
     }
 }
