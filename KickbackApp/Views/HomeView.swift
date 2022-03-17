@@ -57,8 +57,9 @@ struct HomeView: View {
                                     .fontWeight(.bold)
                                     .foregroundColor(Color.darkPink)
                                     .multilineTextAlignment(.leading)
-                                Text("Welcome back!")
-                                    .font(.subheadline)
+                    
+                                Text("You have helped defend 172 women!")
+                                    .font(Font.subheadline.bold())
                                     .foregroundColor(Color.white)
                             }   /// VStack closed
                             Spacer()
@@ -103,10 +104,13 @@ struct HomeView: View {
                                     .padding(.horizontal, 50)
                                     .background(Color.black)
                                     .clipShape(Capsule())
-                                    .shadow(color: Color.white.opacity(0.1), radius: 5, x: 0, y: 5)
+                                    .shadow(color: Color.darkPink.opacity(0.25), radius: 5, x: 0, y: 0)
+                                
                             }
-                            
+                        
                         }
+                        .padding(.top, 10)
+                        .padding(.bottom, 10)
                         
                     }
                     

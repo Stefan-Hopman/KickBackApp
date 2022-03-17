@@ -28,13 +28,26 @@ struct CourseDetailView: View {
 //                        Text("Back").foregroundColor(Color.white)
                     }
                     Spacer()
+                    VStack{
+                        Text(viewModel.course.title)
+                            .foregroundColor(Color.darkPink)
+                            .font(Font.title.bold())
+                        
+                    }
+                    Spacer()
+                    // Invsible view just meant to center texxt
+                    Rectangle()
+                        .foregroundColor(.clear)
+                        .frame(width: 40, height: 40, alignment: .center)
                 }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 Spacer()
                 Text("This is course Detail view")
                     .foregroundColor(Color.white)
                 Text(viewModel.course.title).foregroundColor(Color.white)
                 Spacer()
-            }
+               
+
+            }       
             
         }
     }

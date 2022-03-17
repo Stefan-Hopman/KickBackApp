@@ -36,10 +36,11 @@ struct Home: View {
                 Spacer()
                 VStack{
                     
-                    Image("kickBackLogo")
-                        .resizable()
-                        .frame(width: 80, height: 96)
-                        .cornerRadius(10)
+                        Image("kickBackLogo")
+                            .resizable()
+                            .frame(width: 80, height: 96)
+                            .cornerRadius(10)
+                    
                     //.frame(maxWidth: .infinity, maxHeight: .infinity)
                     Spacer()
                     ZStack{
@@ -57,12 +58,12 @@ struct Home: View {
                     /// Alternative login options
                     HStack(spacing: 15){
                         Rectangle()
-                            .fill(Color.black)
+                            .fill(Color.white)
                             .frame(height: 1)
                         Text("OR")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.white)
                         Rectangle()
-                            .fill(Color.black)
+                            .fill(Color.white)
                             .frame(height: 1)
                     }
                     .padding(.horizontal, 20)
@@ -103,7 +104,7 @@ struct Home: View {
                 }
                 .padding(.vertical)
             }
-            .background(Color(CGColor.white).edgesIgnoringSafeArea(.all))
+            .background(Color.lightBlack.edgesIgnoringSafeArea(.all))
             .navigationTitle("")
             .navigationBarHidden(true)
         }

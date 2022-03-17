@@ -26,13 +26,15 @@ struct CourseListView: View {
                 Button(viewModel.courseList.rightButtonTitle) {
                     onButtonTap?(viewModel.courseList)
                 }
-                .foregroundColor(Color.blue)
+                .foregroundColor(Color.white)
+                .font(Font.caption.bold())
+            
             }.padding(10)
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 10) {
                     ForEach(viewModel.courseList.courses, id: \.id) { course in
-                        CourseView(viewModel: .init(course))
+                        CourseView(viewModel: .init(course), isFavoriteCourse: viewModel.courseList.title == "Favorite Classes" ? true : false)
                             .onTapGesture {
                                 print("Cell tapped", course.title)
                                 onCellTap?(course)
