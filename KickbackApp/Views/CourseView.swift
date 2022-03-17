@@ -24,7 +24,7 @@ struct CourseView: View {
             VStack(alignment: .leading) {
                 Text(viewModel.course.title).font(Font.title3)
                     .foregroundColor(Color.white)
-                Text(viewModel.course.instructorName).font(.headline).foregroundColor(Color.gray)
+                Text(viewModel.course.instructor.instructorName).font(.headline).foregroundColor(Color.gray)
                 if(isFavoriteCourse == false){
                     Text(viewModel.course.date).font(.subheadline).foregroundColor(Color.gray)
                     Text(viewModel.course.time).font(.caption).foregroundColor(Color.gray)

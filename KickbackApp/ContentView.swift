@@ -36,13 +36,13 @@ struct Home: View {
                 Spacer()
                 VStack{
                     
-                        Image("kickBackLogo")
+                        Image("KickBackHeader")
                             .resizable()
-                            .frame(width: 80, height: 96)
-                            .cornerRadius(10)
+                            .frame(width: 300, height: 207)
+                            
                     
                     //.frame(maxWidth: .infinity, maxHeight: .infinity)
-                    Spacer()
+                    
                     ZStack{
                         
                         SignUP(index: self.$index, onLoginButtonTap: {

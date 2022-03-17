@@ -93,6 +93,7 @@ struct HomeView: View {
                             }
                         }
                         .padding(.bottom, 10)
+                        
                         VStack(alignment: .center){
                             Button(action: {
                                 print("Button Tapped")

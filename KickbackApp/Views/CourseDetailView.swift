@@ -17,6 +17,7 @@ struct CourseDetailView: View {
         ZStack {
             Color.lightBlack.ignoresSafeArea()
             VStack {
+                // Header
                 HStack {
                     Button(action: {
                         print("Back Button Tapped")
@@ -31,8 +32,11 @@ struct CourseDetailView: View {
                     VStack{
                         Text(viewModel.course.title)
                             .foregroundColor(Color.darkPink)
-                            .font(Font.title.bold())
-                        
+                            .font(Font.largeTitle.bold())
+                            .padding(.bottom, 0)
+                        Text("\"" + viewModel.course.slogan + "\"")
+                            .foregroundColor(Color.white)
+                            .font(Font.headline.italic())
                     }
                     Spacer()
                     // Invsible view just meant to center texxt
@@ -41,15 +45,42 @@ struct CourseDetailView: View {
                         .frame(width: 40, height: 40, alignment: .center)
                 }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 Spacer()
-                Text("This is course Detail view")
+                HStack{
+                    
+                }
+                
+                Text("About: ")
+                    .foregroundColor(Color.darkPink)
+                    .font(Font.headline.bold())
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 10))
+                Text("Are you ready to kick back and defend yourself?! Prepare to train with best to get the greatest Results. Learn to hit like they do in MMA!")
                     .foregroundColor(Color.white)
-                Text(viewModel.course.title).foregroundColor(Color.white)
+                    .font(Font.body)
+                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                Spacer()
+                Text("Trainer: " + viewModel.course.instructor.instructorName)
+                    .font(Font.title2.bold())
+                    .foregroundColor(Color.darkPink)
                 Spacer()
                
 
             }       
             
         }
+    }
+}
+
+
+struct gymImageView:View{
+    @ObservedObject var viewModel: CourseViewModel
+    
+    var body: some View{
+        Image(viewModel.course.imagePath)
+            .resizable()
+            .frame(width: 140.0, height: 140.0)
+            .cornerRadius(15)
+            .clipped()
     }
 }
 
