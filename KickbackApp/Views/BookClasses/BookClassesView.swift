@@ -9,6 +9,15 @@ import SwiftUI
 
 struct BookClassesView: View {
     
+    
+    let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd MMM yyyy, hh:mm:ss a"
+       // formatter.dateStyle = .long
+        return formatter
+    }()
+    
+    @State private var date = Date()
     @State var showStoreDropDown: Bool = false
     
     var body: some View {
@@ -29,6 +38,16 @@ struct BookClassesView: View {
                     }, alignment: .topLeading
                     
                 )
+                
+                Text("Select a date")
+                    .font(.title)
+                    .foregroundColor(.white)
+                DatePicker("Enter your birthday", selection: $date)
+                    .datePickerStyle(GraphicalDatePickerStyle())
+                    .frame(maxHeight: 400)
+                    .colorScheme(.dark)
+                Text("Date is:\n \(date, formatter: dateFormatter)")
+                    .foregroundColor(.white)
             }
         }
     }
