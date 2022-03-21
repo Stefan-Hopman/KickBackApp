@@ -48,9 +48,12 @@ struct CourseDetailView: View {
                 HStack{
                     
                 }
-                
+                Image(viewModel.course.imagePath)
+                    .resizable()
+                    .frame(width: 350, height: 200, alignment: .center)
+
                 Text("About: ")
-                    .foregroundColor(Color.darkPink)
+                    .foregroundColor(Color.docileWhite)
                     .font(Font.headline.bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 10))
@@ -59,6 +62,7 @@ struct CourseDetailView: View {
                     .font(Font.body)
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
                 
+                    
                 Text("Trainer: " + viewModel.course.instructor.instructorName)
                     .font(Font.title2.bold())
                     .foregroundColor(Color.darkPink)
@@ -74,9 +78,8 @@ struct CourseDetailView: View {
                 Text("Are you ready to kick back and defend yourself?! Prepare to train with best to get the greatest Results. Learn to hit like they do in MMA!")
                     .foregroundColor(Color.white)
                     .font(Font.body)
-                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                Spacer()
-
+                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
+                
             }       
             
         }

@@ -38,7 +38,7 @@ struct Home: View {
                     
                         Image("KickBackHeader")
                             .resizable()
-                            .frame(width: 300, height: 207)
+                            .frame(width: 300, height: 186)
                             
                     
                     //.frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -109,7 +109,7 @@ struct Home: View {
             .navigationBarHidden(true)
         }
         .navigationBarHidden(true)
-        .accentColor(.black)
+        .accentColor(.white)
         
     }
 }

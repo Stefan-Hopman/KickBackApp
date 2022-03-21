@@ -129,14 +129,12 @@
 		957E9A6327C64DA100DE389A /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F8D8110327E4FEE200607E22 /* Home */,
+				F8D8110227E4FEB200607E22 /* Pricing */,
 				4EAE4A0027E0B5FB00998FF9 /* Utilities */,
 				4EAE49FF27E0AEC400998FF9 /* BookClasses */,
-				957E9A6427C64EF000DE389A /* HomeView.swift */,
-				958EBB4327C88FCF00FACB41 /* CourseView.swift */,
-				958EBB4B27C8963100FACB41 /* CourseListView.swift */,
 				954C309527CF988700474EAF /* TabbarView.swift */,
 				954C309927CF9CBF00474EAF /* AboutUsView.swift */,
-				954C309B27CF9D2500474EAF /* PriceView.swift */,
 				4EC2A11E27D76DC100066C99 /* CourseDetailView.swift */,
 				4EC2A12027D76EA100066C99 /* AllCoursesView.swift */,
 			);
@@ -177,6 +175,24 @@
 				F8EEE8A827792BB100BAFD30 /* ColorExtension.swift */,
 			);
 			path = "Custom Colors";
+			sourceTree = "<group>";
+		};
+		F8D8110227E4FEB200607E22 /* Pricing */ = {
+			isa = PBXGroup;
+			children = (
+				954C309B27CF9D2500474EAF /* PriceView.swift */,
+			);
+			path = Pricing;
+			sourceTree = "<group>";
+		};
+		F8D8110327E4FEE200607E22 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				957E9A6427C64EF000DE389A /* HomeView.swift */,
+				958EBB4327C88FCF00FACB41 /* CourseView.swift */,
+				958EBB4B27C8963100FACB41 /* CourseListView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		F8EEE87227792BA000BAFD30 = {
