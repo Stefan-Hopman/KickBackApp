@@ -22,13 +22,13 @@ struct ForgotPasswordView: View {
                 .frame(width: 80, height: 80)
                 .padding(.top, 0)
             Text("Trouble With Logging In?")
-                .font(.title2)
-                .foregroundColor(.black)
+                .font(Font.title2.bold())
+                .foregroundColor(.darkPink)
                 .padding(.top, 30)
             Text("Please enter your email address, and we will send you a link to recover your password.")
                 .font(.system(size: 15))
                 .multilineTextAlignment(.center)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.white)
                 .padding(.top, 4)
                 .padding(.leading, 35)
                 .padding(.trailing, 35)
@@ -48,7 +48,7 @@ struct ForgotPasswordView: View {
                 .padding(.bottom, 0)
                 .frame(width: .none, height: 70, alignment: .center)
                 .textFieldStyle(MyTextFieldStyle(focused: $textFieldIsEditing)).font(.title3)
-                .foregroundColor(Color.black)
+                .foregroundColor(Color.white)
             
             Button(action: {
                 onConfirmButtonTapped(nextScreen: &willMoveToNextScreen)
@@ -75,7 +75,7 @@ struct ForgotPasswordView: View {
         }
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(CGColor.white).edgesIgnoringSafeArea(.all))
+        .background(Color.lightBlack.edgesIgnoringSafeArea(.all))
     }
     
 }
