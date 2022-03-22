@@ -20,6 +20,8 @@ struct BookClassesView: View {
     @State private var date = Date()
     @State var showStoreDropDown: Bool = false
     
+    var studiosList: [String] = ["Elite", "Ashoka"]
+    
     var body: some View {
         ZStack {
             Color.lightBlack.ignoresSafeArea()
@@ -29,11 +31,15 @@ struct BookClassesView: View {
                     .foregroundColor(.white)
                 DropDownButton {
                     showStoreDropDown.toggle()
-                }.overlay(
+                }
+                .zIndex(1)  /// required to show overlay on the top of the other views.
+                .overlay(
                     VStack {
                         if showStoreDropDown {
                             Spacer(minLength: 40)
-                            DropDownView()
+                            DropDownView(items: studiosList) { selectedItem in
+                                showStoreDropDown.toggle()
+                            }
                         }
                     }, alignment: .topLeading
                     

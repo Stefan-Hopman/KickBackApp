@@ -7,32 +7,47 @@
 
 import SwiftUI
 
-
+typealias buttonTapClosure = ((DropDownItem) -> ())
 
 struct DropDownView: View {
     
-    var items: [DropDownItem] = [.init(title: "Sudoku"), .init(title: "Elite"), .init(title: "Goldust"), .init(title: "Ashoka"), .init(title: "Ultimate"), .init(title: "Kingburn"), .init(title: "Naville")]
+    var items: [DropDownItem] = []
     
-    var action : ((DropDownItem) -> ())? = nil
+    var action : buttonTapClosure? = nil
+    
+    init(items: [String] = ["Sudoku", "Elite"], action: buttonTapClosure? = nil) {
+        self.action = action
+        for item in items {
+            self.items.append(.init(title: item))
+        }
+    }
     
     var body: some View {
-         VStack(alignment: .leading, spacing: 4){
-            ForEach(items) { item in
-                Button(action: {
-                    print(item.title, "tapped")
-                }) {
-                    VStack {
-                        Text(item.title)
-                            .foregroundColor(.lightBlack)
-                            .padding([.leading, .top], 4)
-                        
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 4){
+                ForEach(items) { item in
+                    Button(action: {
+                        print(item.title, "tapped")
+                        action?(item)
+                    }) {
+                        VStack {
+                            Text(item.title)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .foregroundColor(.lightBlack)
+                                .padding([.leading, .top], 4)
+                            
+                        }
                     }
+                    
+                    Divider()
                 }
-                Divider()
             }
+            //.clipped()
+           // .frame(height: 200)
+            .padding(.all, 12)
+            .background(RoundedRectangle(cornerRadius: 6).foregroundColor(.white).shadow(radius: 2))
         }
-        .padding(.all, 12)
-        .background(RoundedRectangle(cornerRadius: 6).foregroundColor(.white).shadow(radius: 2))
+        .frame(height: 200)
     }
 }
 
