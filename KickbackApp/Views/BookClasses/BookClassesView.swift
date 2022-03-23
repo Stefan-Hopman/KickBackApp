@@ -19,6 +19,7 @@ struct BookClassesView: View {
     
     @State private var date = Date()
     @State var showStoreDropDown: Bool = false
+    @State var selectedOptionInDropDown: DropDownItem?
     
     var studiosList: [String] = ["Elite", "Ashoka"]
     
@@ -29,15 +30,16 @@ struct BookClassesView: View {
                 Text("Your Studios")
                     .font(.headline)
                     .foregroundColor(.white)
-                DropDownButton {
+                DropDownButton(viewModel: .init(selectedOptionInDropDown), onTap: {
                     showStoreDropDown.toggle()
-                }
+                })
                 .zIndex(1)  /// required to show overlay on the top of the other views.
                 .overlay(
                     VStack {
                         if showStoreDropDown {
                             Spacer(minLength: 40)
                             DropDownView(items: studiosList) { selectedItem in
+                                selectedOptionInDropDown = selectedItem
                                 showStoreDropDown.toggle()
                             }
                         }

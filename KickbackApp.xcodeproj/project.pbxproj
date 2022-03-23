@@ -23,6 +23,7 @@
 		958EBB4A27C8957F00FACB41 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EBB4927C8957F00FACB41 /* CourseListViewModel.swift */; };
 		958EBB4C27C8963100FACB41 /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EBB4B27C8963100FACB41 /* CourseListView.swift */; };
 		958EBB5327CCE5A100FACB41 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EBB5227CCE5A100FACB41 /* HomeViewModel.swift */; };
+		95D7393A27EB6C1A00381F60 /* DropDownButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7393927EB6C1A00381F60 /* DropDownButtonViewModel.swift */; };
 		F849418027C006F200CCB163 /* CustomTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849417F27C006F200CCB163 /* CustomTextFields.swift */; };
 		F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */; };
 		F8EEE87F27792BA000BAFD30 /* KickbackAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EEE87E27792BA000BAFD30 /* KickbackAppApp.swift */; };
@@ -69,6 +70,7 @@
 		958EBB4927C8957F00FACB41 /* CourseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
 		958EBB4B27C8963100FACB41 /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
 		958EBB5227CCE5A100FACB41 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		95D7393927EB6C1A00381F60 /* DropDownButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButtonViewModel.swift; sourceTree = "<group>"; };
 		F849417F27C006F200CCB163 /* CustomTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFields.swift; sourceTree = "<group>"; };
 		F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		F8EEE87B27792BA000BAFD30 /* KickbackApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KickbackApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 			children = (
 				958EBB4527C8901F00FACB41 /* CourseViewModel.swift */,
 				958EBB4927C8957F00FACB41 /* CourseListViewModel.swift */,
+				95D7393927EB6C1A00381F60 /* DropDownButtonViewModel.swift */,
 				958EBB5227CCE5A100FACB41 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
@@ -391,6 +394,7 @@
 				F8EEE8A927792BB100BAFD30 /* ColorExtension.swift in Sources */,
 				958EBB4027C88C1C00FACB41 /* Course.swift in Sources */,
 				4EC2A11F27D76DC100066C99 /* CourseDetailView.swift in Sources */,
+				95D7393A27EB6C1A00381F60 /* DropDownButtonViewModel.swift in Sources */,
 				F849418027C006F200CCB163 /* CustomTextFields.swift in Sources */,
 				F8EEE88127792BA000BAFD30 /* ContentView.swift in Sources */,
 				957E9A6527C64EF000DE389A /* HomeView.swift in Sources */,
