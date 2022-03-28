@@ -13,7 +13,7 @@ struct DropDownView: View {
     
     var items: [DropDownItem] = []
     
-    var action : buttonTapClosure? = nil
+    var action : buttonTapClosure? = nil    //
     
     init(items: [String] = ["Sudoku", "Elite"], action: buttonTapClosure? = nil) {
         self.action = action
