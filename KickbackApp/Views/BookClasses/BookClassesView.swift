@@ -50,12 +50,13 @@ struct BookClassesView: View {
                 Text("Select a date")
                     .font(.title)
                     .foregroundColor(.white)
-                DatePicker("Enter your birthday", selection: $date)
+                DatePicker("Enter your birthday", selection: $date, displayedComponents: [.date])
                     .datePickerStyle(GraphicalDatePickerStyle())
-                    .frame(maxHeight: 400)
+                   // .frame(maxHeight: 400)
                     .colorScheme(.dark)
                 Text("Date is:\n \(date, formatter: dateFormatter)")
                     .foregroundColor(.white)
+                Spacer()
             }
         }
     }

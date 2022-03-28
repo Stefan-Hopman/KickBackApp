@@ -32,7 +32,7 @@ struct CourseList: Identifiable {
     let rightButtonTitle: String
     
     var count: Int {
-        return courses.count
+return courses.count
     }
 }
 
