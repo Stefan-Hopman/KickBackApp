@@ -47,7 +47,7 @@ fileprivate extension Calendar {
     }
 }
 
-struct CalendarView<DateView>: View where DateView: View {
+struct CalendarMView<DateView>: View where DateView: View {
     @Environment(\.calendar) var calendar
 
     let interval: DateInterval
@@ -113,9 +113,9 @@ struct CalendarView<DateView>: View where DateView: View {
     }
 }
 
-struct CalendarView_Previews: PreviewProvider {
+struct CalendarMView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView(interval: .init()) { _ in
+        CalendarMView(interval: .init()) { _ in
             Text("30")
                 .padding(8)
                 .background(Color.blue)

@@ -21,6 +21,8 @@ struct BookClassesView: View {
     @State var showStoreDropDown: Bool = false
     @State var selectedOptionInDropDown: DropDownItem?
     
+    @ObservedObject private var event = CalendarEvent()
+    
     var studiosList: [String] = ["Elite", "Ashoka"]
     
     var body: some View {
@@ -50,12 +52,16 @@ struct BookClassesView: View {
                 Text("Select a date")
                     .font(.title)
                     .foregroundColor(.white)
+                /*
                 DatePicker("Enter your birthday", selection: $date, displayedComponents: [.date])
                     .datePickerStyle(GraphicalDatePickerStyle())
                    // .frame(maxHeight: 400)
                     .colorScheme(.dark)
                 Text("Date is:\n \(date, formatter: dateFormatter)")
                     .foregroundColor(.white)
+                 */
+                FSCalendarView(selectedDate: $event.date)
+                            .frame(height: 300.0, alignment: .center)
                 Spacer()
             }
         }
