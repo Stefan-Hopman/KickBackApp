@@ -60,8 +60,9 @@ struct BookClassesView: View {
                 Text("Date is:\n \(date, formatter: dateFormatter)")
                     .foregroundColor(.white)
                  */
-                FSCalendarView(selectedDate: $event.date)
+                FSCalendarView(selectedDate: $event.date, eventColor: .yellow)
                             .frame(height: 300.0, alignment: .center)
+                            
                 Spacer()
             }
         }

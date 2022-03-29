@@ -14,6 +14,8 @@ struct FSCalendarView: UIViewRepresentable {
     
     @Binding var selectedDate: Date?
     
+    var eventColor: UIColor = .red
+    
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
@@ -24,6 +26,7 @@ struct FSCalendarView: UIViewRepresentable {
         calendar.delegate = context.coordinator
         calendar.appearance.todayColor = UIColor.systemGreen
         calendar.appearance.selectionColor = UIColor.systemBlue
+        calendar.appearance.eventDefaultColor = eventColor
         return calendar
     }
     
