@@ -25,6 +25,13 @@ struct BookClassesView: View {
     
     var studiosList: [String] = ["Elite", "Ashoka"]
     
+    static let taskDateFormat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
+    
+    
     var body: some View {
         ZStack {
             Color.lightBlack.ignoresSafeArea()
@@ -46,7 +53,6 @@ struct BookClassesView: View {
                             }
                         }
                     }, alignment: .topLeading
-                    
                 )
                 
                 Text("Select a date")
@@ -61,13 +67,18 @@ struct BookClassesView: View {
                     .foregroundColor(.white)
                  */
                 FSCalendarView(selectedDate: $event.date, eventColor: .yellow)
-                            .frame(height: 300.0, alignment: .center)
+                    .frame(height: 300.0, alignment: .center)
+                if event.date != nil {
+                            Text("Selected date: \(event.date!, formatter: Self.taskDateFormat)")
+                        .foregroundColor(.white)
+                        }
                             
                 Spacer()
             }
         }
     }
 }
+
 
 struct BookClassesView_Previews: PreviewProvider {
     static var previews: some View {
