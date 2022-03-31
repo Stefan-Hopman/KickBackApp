@@ -14,6 +14,9 @@ struct FSCalendarView: UIViewRepresentable {
     
     @Binding var selectedDate: Date?
     
+    var test: String = "Test"
+    let selectedDates = ["2022/03/27", "2017/01/06", "2017/01/17"]
+    
     var eventColor: UIColor = .red
     let calendar = FSCalendar()
     
@@ -30,11 +33,12 @@ struct FSCalendarView: UIViewRepresentable {
         calendar.appearance.weekdayTextColor = .white
         calendar.appearance.headerTitleColor = .white
         
+        calendar.placeholderType = .none
         calendar.appearance.titlePlaceholderColor = .lightGray
         calendar.appearance.titleDefaultColor = .white
         
         calendar.appearance.eventDefaultColor = eventColor
-        calendar.dataSource = context.coordinator
+//        calendar.dataSource = context.coordinator
         return calendar
     }
     
@@ -59,17 +63,34 @@ struct FSCalendarView: UIViewRepresentable {
 
 class Coordinator: NSObject, FSCalendarDelegate {
     
-    var parent: FSCalendarView
+    var calendar: FSCalendarView
+    
+    fileprivate lazy var dateFormatter1: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter
+    }()
     
     init(_ calender: FSCalendarView) {
-        self.parent = calender
+        self.calendar = calender
     }
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
-        self.parent.selectedDate = date
+        self.calendar.selectedDate = date
     }
+    
 }
 
-extension Coordinator: FSCalendarDataSource {
+extension Coordinator: FSCalendarDelegateAppearance {
+   
     
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+        let dateString = self.dateFormatter1.string(from: date)
+        return self.calendar.selectedDates.contains(dateString) ? .green : .white
+    }
+    
+    func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleSelectionColorFor date: Date) -> UIColor? {
+        let dateString = self.dateFormatter1.string(from: date)
+        return self.calendar.selectedDates.contains(dateString) ? .green : .white
+    }
 }
