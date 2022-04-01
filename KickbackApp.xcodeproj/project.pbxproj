@@ -26,7 +26,13 @@
 		958EBB4A27C8957F00FACB41 /* CourseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EBB4927C8957F00FACB41 /* CourseListViewModel.swift */; };
 		958EBB4C27C8963100FACB41 /* CourseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EBB4B27C8963100FACB41 /* CourseListView.swift */; };
 		958EBB5327CCE5A100FACB41 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958EBB5227CCE5A100FACB41 /* HomeViewModel.swift */; };
-		95D2DCB327F5BEF100CAF90F /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 95D2DCB227F5BEF100CAF90F /* FSCalendar */; };
+		95C3716527F68C270030F8E1 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 95C3716427F68C270030F8E1 /* FSCalendar */; };
+		95C3716827F69EB60030F8E1 /* ClassBooking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3716727F69EB60030F8E1 /* ClassBooking.swift */; };
+		95C3716B27F6A1060030F8E1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3716A27F6A1060030F8E1 /* Data.swift */; };
+		95C3716E27F6A1620030F8E1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3716D27F6A1620030F8E1 /* Constants.swift */; };
+		95C3717027F6A6E90030F8E1 /* BookingClassesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3716F27F6A6E90030F8E1 /* BookingClassesManager.swift */; };
+		95C3717227F6AAF70030F8E1 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3717127F6AAF70030F8E1 /* UserDefaults.swift */; };
+		95C3717627F6B09D0030F8E1 /* TimeSlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C3717527F6B09D0030F8E1 /* TimeSlotView.swift */; };
 		95D7393A27EB6C1A00381F60 /* DropDownButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D7393927EB6C1A00381F60 /* DropDownButtonViewModel.swift */; };
 		F849418027C006F200CCB163 /* CustomTextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = F849417F27C006F200CCB163 /* CustomTextFields.swift */; };
 		F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */; };
@@ -77,6 +83,12 @@
 		958EBB4927C8957F00FACB41 /* CourseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListViewModel.swift; sourceTree = "<group>"; };
 		958EBB4B27C8963100FACB41 /* CourseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListView.swift; sourceTree = "<group>"; };
 		958EBB5227CCE5A100FACB41 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		95C3716727F69EB60030F8E1 /* ClassBooking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassBooking.swift; sourceTree = "<group>"; };
+		95C3716A27F6A1060030F8E1 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		95C3716D27F6A1620030F8E1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		95C3716F27F6A6E90030F8E1 /* BookingClassesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingClassesManager.swift; sourceTree = "<group>"; };
+		95C3717127F6AAF70030F8E1 /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		95C3717527F6B09D0030F8E1 /* TimeSlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSlotView.swift; sourceTree = "<group>"; };
 		95D7393927EB6C1A00381F60 /* DropDownButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButtonViewModel.swift; sourceTree = "<group>"; };
 		F849417F27C006F200CCB163 /* CustomTextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFields.swift; sourceTree = "<group>"; };
 		F8E59B4627BAD3E300FBD73B /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
@@ -98,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95D2DCB327F5BEF100CAF90F /* FSCalendar in Frameworks */,
+				95C3716527F68C270030F8E1 /* FSCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				954C309727CF9A8A00474EAF /* BookClassesView.swift */,
+				95C3717527F6B09D0030F8E1 /* TimeSlotView.swift */,
 				4E849C9327F32E5300A7C468 /* FSCalendarView.swift */,
 			);
 			path = BookClasses;
@@ -156,6 +169,7 @@
 		958EBB3E27C88BD300FACB41 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				95C3716627F69EA60030F8E1 /* BookClasses */,
 				958EBB3F27C88C1C00FACB41 /* Course.swift */,
 				4EAE4A0527E0BDA600998FF9 /* DropDownItem.swift */,
 				4E849C9527F3326F00A7C468 /* CalendarEvent.swift */,
@@ -172,6 +186,32 @@
 				958EBB5227CCE5A100FACB41 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		95C3716627F69EA60030F8E1 /* BookClasses */ = {
+			isa = PBXGroup;
+			children = (
+				95C3716727F69EB60030F8E1 /* ClassBooking.swift */,
+				95C3716F27F6A6E90030F8E1 /* BookingClassesManager.swift */,
+			);
+			path = BookClasses;
+			sourceTree = "<group>";
+		};
+		95C3716927F6A0ED0030F8E1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95C3716A27F6A1060030F8E1 /* Data.swift */,
+				95C3717127F6AAF70030F8E1 /* UserDefaults.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95C3716C27F6A1400030F8E1 /* Utility Classes */ = {
+			isa = PBXGroup;
+			children = (
+				95C3716D27F6A1620030F8E1 /* Constants.swift */,
+			);
+			path = "Utility Classes";
 			sourceTree = "<group>";
 		};
 		F849417E27C006D400CCB163 /* Custom Views */ = {
@@ -232,6 +272,8 @@
 		F8EEE87D27792BA000BAFD30 /* KickbackApp */ = {
 			isa = PBXGroup;
 			children = (
+				95C3716C27F6A1400030F8E1 /* Utility Classes */,
+				95C3716927F6A0ED0030F8E1 /* Extensions */,
 				958EBB4127C88EF500FACB41 /* ViewModels */,
 				958EBB3E27C88BD300FACB41 /* Models */,
 				957E9A6327C64DA100DE389A /* Views */,
@@ -287,7 +329,7 @@
 			);
 			name = KickbackApp;
 			packageProductDependencies = (
-				95D2DCB227F5BEF100CAF90F /* FSCalendar */,
+				95C3716427F68C270030F8E1 /* FSCalendar */,
 			);
 			productName = KickbackApp;
 			productReference = F8EEE87B27792BA000BAFD30 /* KickbackApp.app */;
@@ -362,7 +404,7 @@
 			);
 			mainGroup = F8EEE87227792BA000BAFD30;
 			packageReferences = (
-				95D2DCB127F5BEF100CAF90F /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				95C3716327F68C270030F8E1 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = F8EEE87C27792BA000BAFD30 /* Products */;
 			projectDirPath = "";
@@ -408,6 +450,7 @@
 			files = (
 				954C309827CF9A8A00474EAF /* BookClassesView.swift in Sources */,
 				954C309A27CF9CBF00474EAF /* AboutUsView.swift in Sources */,
+				95C3716827F69EB60030F8E1 /* ClassBooking.swift in Sources */,
 				4E849C9427F32E5300A7C468 /* FSCalendarView.swift in Sources */,
 				957C0A3627EDE6730081188E /* CalendarView.swift in Sources */,
 				F8EEE8A927792BB100BAFD30 /* ColorExtension.swift in Sources */,
@@ -416,6 +459,7 @@
 				95D7393A27EB6C1A00381F60 /* DropDownButtonViewModel.swift in Sources */,
 				F849418027C006F200CCB163 /* CustomTextFields.swift in Sources */,
 				F8EEE88127792BA000BAFD30 /* ContentView.swift in Sources */,
+				95C3716E27F6A1620030F8E1 /* Constants.swift in Sources */,
 				957E9A6527C64EF000DE389A /* HomeView.swift in Sources */,
 				F8E59B4727BAD3E300FBD73B /* ForgotPasswordView.swift in Sources */,
 				954C309C27CF9D2500474EAF /* PriceView.swift in Sources */,
@@ -424,12 +468,16 @@
 				4EC2A12127D76EA100066C99 /* AllCoursesView.swift in Sources */,
 				958EBB5327CCE5A100FACB41 /* HomeViewModel.swift in Sources */,
 				4EAE4A0427E0B91600998FF9 /* DropDownButton.swift in Sources */,
+				95C3717627F6B09D0030F8E1 /* TimeSlotView.swift in Sources */,
+				95C3717027F6A6E90030F8E1 /* BookingClassesManager.swift in Sources */,
 				958EBB4A27C8957F00FACB41 /* CourseListViewModel.swift in Sources */,
 				F8EEE87F27792BA000BAFD30 /* KickbackAppApp.swift in Sources */,
 				958EBB4427C88FCF00FACB41 /* CourseView.swift in Sources */,
 				958EBB4C27C8963100FACB41 /* CourseListView.swift in Sources */,
 				4EAE4A0627E0BDA600998FF9 /* DropDownItem.swift in Sources */,
+				95C3717227F6AAF70030F8E1 /* UserDefaults.swift in Sources */,
 				954C309627CF988800474EAF /* TabbarView.swift in Sources */,
+				95C3716B27F6A1060030F8E1 /* Data.swift in Sources */,
 				4E849C9627F3326F00A7C468 /* CalendarEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,7 +829,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		95D2DCB127F5BEF100CAF90F /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+		95C3716327F68C270030F8E1 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/WenchaoD/FSCalendar.git";
 			requirement = {
@@ -792,9 +840,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		95D2DCB227F5BEF100CAF90F /* FSCalendar */ = {
+		95C3716427F68C270030F8E1 /* FSCalendar */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 95D2DCB127F5BEF100CAF90F /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			package = 95C3716327F68C270030F8E1 /* XCRemoteSwiftPackageReference "FSCalendar" */;
 			productName = FSCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */

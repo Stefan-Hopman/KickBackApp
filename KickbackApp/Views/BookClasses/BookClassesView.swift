@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct BookClassesView: View {
-    
-    
+   
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMM yyyy, hh:mm:ss a"
@@ -31,6 +30,10 @@ struct BookClassesView: View {
         return formatter
     }()
     
+    init() {
+        let classes = bookingManager.allClasses
+        print(classes.count)
+    }
     
     var body: some View {
         ZStack {
