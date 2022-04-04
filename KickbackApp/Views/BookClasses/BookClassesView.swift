@@ -20,9 +20,14 @@ struct BookClassesView: View {
     
 //    @State private var date = Date()
     @State var showStoreDropDown: Bool = false
-    @State var showClassTypeDropDown: Bool = false
+    @State var showClassTypeDropDown: Bool = false {
+        didSet {
+            isEventSelected = false
+        }
+    }
     @State var selectedStudio: DropDownItem?
-    @State var selectedClassType: DropDownItem?
+    @State var selectedClassType: DropDownItem? = .init(title: "Upper Body")
+    @State var selectedTimeSlot: String?
     
     @ObservedObject private var event = CalendarEvent() {
         didSet {
@@ -49,6 +54,7 @@ struct BookClassesView: View {
     }()
     
     @StateObject var properties = CalendarProperties()
+    @State var isEventSelected: Bool = false
    
     var calendar: FSCalendarView!
     
@@ -62,7 +68,7 @@ struct BookClassesView: View {
     mutating func setCalendar() {
         calendar = FSCalendarView(selectedDate: $event.date, selectedStudio: $event.studioName, onDateSelect: { date in
             print("Date Selcted in closure: ", date)
-//            selectedDate = date
+//            isEventSelected = false
         })
     }
     
@@ -124,24 +130,42 @@ struct BookClassesView: View {
                             }
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                             .zIndex(1)
-                            TimeSlotCollectionView(viewModel: .init(slots: []))
+//                            TimeSlotCollectionView(viewModel: .init(date: event.date!, studioName: selectedStudio?.title ?? ""))
+                            TimeSlotCollectionView(viewModel: .init(date: event.date!, studioName: selectedStudio?.title ?? ""), onSelection: { selectedTime in
+                                print("on Selection called")
+                                selectedTimeSlot = selectedTime
+                                isEventSelected = true
+                            })
                         }
                         .padding(9)
                         .zIndex(1)
-                        VStack(alignment: .center) {
-                            Button(action: {
-                                print("Button Tapped")
-                            }) {
-                                Text("BOOK")
-                                    .foregroundColor(.white)
-                                    .fontWeight(.bold)
-                                    .padding(.vertical)
-                                    .padding(.horizontal, 50)
-                                    .background(Color.black)
-                                    .clipShape(Capsule())
-                                    .shadow(color: Color.darkPink.opacity(0.25), radius: 5, x: 0, y: 0)
+                        if isEventSelected {
+                            VStack(alignment: .center) {
+                                Button(action: {
+                                    print("Button Tapped")
+                                    let studioName = selectedStudio?.title ?? ""
+                                    let classType = selectedClassType?.title ?? ""
+                                    let date = event.date!
+                                    let time = selectedTimeSlot
+                                    
+                                    let element = ClassBookingElement(classType: classType, classStartTime: time, studioName: studioName, date: date)
+                                    bookingManager.add(element)
+                                    calendar.reload()
+                                    
+                                    calendar.selectedDate = nil
+                                    isEventSelected = false
+                                }) {
+                                    Text("BOOK")
+                                        .foregroundColor(.white)
+                                        .fontWeight(.bold)
+                                        .padding(.vertical)
+                                        .padding(.horizontal, 50)
+                                        .background(Color.black)
+                                        .clipShape(Capsule())
+                                        .shadow(color: Color.darkPink.opacity(0.25), radius: 5, x: 0, y: 0)
+                                }
                             }
-                        }.disabled(false)
+                        }
                     }
                 }
                 Spacer()

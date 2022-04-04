@@ -22,7 +22,7 @@ enum UserDefaultKeys: String {
 }
 
 
-enum TimeSlots: String {
+enum TimeSlots: String, CaseIterable {
     case first = "09:00 - 10:00am"
     case second = "11:00 - 12:00pm"
     case third = "01:00 - 02:00pm"

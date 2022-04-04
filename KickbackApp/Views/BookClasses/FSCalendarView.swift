@@ -99,6 +99,10 @@ struct FSCalendarView: UIViewRepresentable {
         let fetchedEvents = bookingManager.fetchEventsFor(currentDate, studioName: selectedStudio)
         print(fetchedEvents)
     }
+    
+    func reload() {
+        calendar.reloadData()
+    }
 }
 
 
@@ -127,6 +131,14 @@ extension Coordinator: FSCalendarDelegateAppearance {
    
     
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleDefaultColorFor date: Date) -> UIColor? {
+        if let selectedStudio = self.calendar.selectedStudio  {
+            let fetchedEvents = bookingManager.fetchEventsFor(date, studioName: selectedStudio)
+            print(fetchedEvents.count, date.toString())
+            if fetchedEvents.count >= TimeSlots.allCases.count {
+                return .white.withAlphaComponent(0.5)
+            }
+        }
+        
         let dateString = self.dateFormatter1.string(from: date)
         return self.calendar.selectedDates.contains(dateString) ? .green : .white
     }

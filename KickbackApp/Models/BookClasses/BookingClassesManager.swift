@@ -16,12 +16,12 @@ class BookingClassesManager {
     
     
     init() {
-//        fetchAllClasses()
-        if allClasses.count == 0 {
-            allClasses.append(ClassBookingElement.testBooking)
-            allClasses.append(ClassBookingElement.testBooking2)
-            save()
-        }
+        fetchAllClasses()
+//        if allClasses.count == 0 {
+//            allClasses.append(ClassBookingElement.testBooking)
+//            allClasses.append(ClassBookingElement.testBooking2)
+//            save()
+//        }
     }
     
     /// Contains list of all classes
@@ -44,8 +44,9 @@ class BookingClassesManager {
         }
     }
     
-    func add() {
-        
+    func add(_ classElement: ClassBookingElement) {
+        allClasses.append(classElement)
+        save()
     }
     
     
@@ -60,6 +61,17 @@ class BookingClassesManager {
             }
         }
         return events
+    }
+    
+    func getTimeSlots(_ currentDate: Date, studioName: String) -> [TimeSlotItem] {
+        let bookings = fetchEventsFor(currentDate, studioName: studioName)
+        var timingsSlotArr: [TimeSlotItem] = []
+        for booking in bookings {
+            if let slot: TimeSlots = .init(rawValue: booking.classStartTime ?? "") {
+                timingsSlotArr.append(TimeSlotItem(title: slot))
+            }
+        }
+        return timingsSlotArr
     }
     
     
