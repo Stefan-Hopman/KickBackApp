@@ -12,11 +12,16 @@ import Foundation
 // MARK: - ClassBookingElement
 struct ClassBookingElement: Codable {
     var classType, classStartTime, date, studioName: String?
+    
+    
 }
 
-
-
 typealias ClassBooking = [ClassBookingElement]
+
+extension ClassBookingElement {
+    
+    static var testBooking: ClassBookingElement = .init(classType: "Kuwando", classStartTime: "11:00 - 12:00pm", date: "", studioName: "")
+}
 
 
 

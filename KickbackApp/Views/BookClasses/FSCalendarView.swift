@@ -10,9 +10,24 @@ import FSCalendar
 import UIKit
 import SwiftUI
 
+class CalendarProperties: ObservableObject {
+    @Published var selectedDate: Date? {
+        didSet {
+            print("properties changed ABC")
+        }
+    }
+}
+
 struct FSCalendarView: UIViewRepresentable {
-    
-    @Binding var selectedDate: Date?
+    @Binding var selectedDate: Date? {
+        didSet {
+            if selectedDate == nil {
+                for date in calendar.selectedDates {
+                    calendar.deselect(date)
+                }
+            }
+        }
+    }
     
     var test: String = "Test"
     let selectedDates = ["2022/03/27", "2017/01/06", "2017/01/17"]
@@ -23,7 +38,6 @@ struct FSCalendarView: UIViewRepresentable {
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-    
     
     func makeUIView(context: Context) -> FSCalendar {
         calendar.delegate = context.coordinator
@@ -43,6 +57,9 @@ struct FSCalendarView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: FSCalendar, context: Context) {
+//        if properties.selectedDate == nil {
+//            print("Clean the data please")
+//        }
     }
     
     
