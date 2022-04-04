@@ -9,20 +9,26 @@ import Foundation
 import SwiftUI
 
 final class TimeSlotCollectionViewModel: ObservableObject {
-    
     var slots: [TimeSlotItem] = TimeSlotItem.items
-    @Published var date: Date = Date()
-
-    /// Used to return time slots for selected event.
-//    var timeSlots: [TimeSlotItem] {
-//        var tSlots: [TimeSlotItem] = []
-//        for var slot in slots {
-//            if event.timeSlot == slot.title.value {
-//                slot.color = .green
-//            }
-//            tSlots.append(slot)
-//        }
-//        return tSlots
-//    }
+    
+    var selectedStudio: String? {
+        didSet {
+            setPreferences()
+        }
+    }
+    var selectedDate: String? {
+        didSet {
+            setPreferences()
+        }
+    }
+    
+    /// Contains selected time slot.
+    init(slots: [TimeSlotItem]) {
+        self.slots = slots
+    }
+    
+    func setPreferences() {
+        
+    }
     
 }

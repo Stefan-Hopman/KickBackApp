@@ -7,33 +7,15 @@
 
 import Foundation
 
-struct CalendarSelections {
-    var studioName: String? = ""
-    var date: Date? = nil
-    var timeSlotSelected: String = ""
-}
-
 
 class BookingClassesManager {
     static let shared = BookingClassesManager()
+    
     var allClasses: ClassBooking = []
-    var calendarSelection: CalendarSelections?
     
-    var StudioName: String? {
-        calendarSelection?.studioName?.count == 0 ? nil : calendarSelection?.studioName!
-    }
     
-    var date: Date? {
-        set {
-            calendarSelection?.date = newValue
-        }
-        get {
-            calendarSelection?.date
-        }
-    }
     
     init() {
-        calendarSelection = .init()
 //        fetchAllClasses()
         if allClasses.count == 0 {
             allClasses.append(ClassBookingElement.testBooking)

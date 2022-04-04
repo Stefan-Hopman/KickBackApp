@@ -5,12 +5,11 @@
 //  Created by Joga Singh on 03/04/22.
 //
 
-import SwiftUI
+import Foundation
 
 struct TimeSlotItem: Identifiable, Hashable {
     var id = UUID()
     let title: TimeSlots
-    var color: Color = .white
 }
 
 extension TimeSlotItem {
