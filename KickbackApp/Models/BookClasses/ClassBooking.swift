@@ -11,19 +11,27 @@ import Foundation
 
 // MARK: - ClassBookingElement
 struct ClassBookingElement: Codable {
-    var classType, classStartTime, date, studioName: String?
-    
-    
+    var classType, classStartTime, studioName: String?
+    var date: Date
 }
 
 typealias ClassBooking = [ClassBookingElement]
 
 extension ClassBookingElement {
-    
-    static var testBooking: ClassBookingElement = .init(classType: "Kuwando", classStartTime: "11:00 - 12:00pm", date: "", studioName: "")
+    static var testBooking: ClassBookingElement = .init(classType: "Upper Body", classStartTime: "11:00 - 12:00pm", studioName: "Sukka Fitness", date: Date())
+    static var testBooking2: ClassBookingElement = .init(classType: "Upper Body", classStartTime: "09:00 - 10:00am", studioName: "Sukka Fitness", date: Date())
 }
 
-
+extension ClassBooking {
+    
+    var datesArray: [String] {
+        var dateValues: [String] = []
+        for item in self {
+            dateValues.append(item.date.toString("yyyy/MM"))    /// Used to fetch month and year only.
+        }
+        return dateValues
+    }
+}
 
 /*
  enum ClassType : String, Codable {

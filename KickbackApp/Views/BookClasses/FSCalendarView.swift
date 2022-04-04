@@ -30,10 +30,19 @@ struct FSCalendarView: UIViewRepresentable {
     }
     
     var test: String = "Test"
+    @Binding var selectedStudio: String? {
+        didSet {
+            print("selectedStudio: ", selectedStudio ?? "")
+            calendar.reloadData()
+        }
+    }
+    
     let selectedDates = ["2022/03/27", "2017/01/06", "2017/01/17"]
     
     var eventColor: UIColor = .red
     let calendar = FSCalendar()
+    
+    @State var onDateSelect: ((Date) -> ())?
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -52,7 +61,7 @@ struct FSCalendarView: UIViewRepresentable {
         calendar.appearance.titleDefaultColor = .white
         
         calendar.appearance.eventDefaultColor = eventColor
-//        calendar.dataSource = context.coordinator
+        calendar.dataSource = context.coordinator
         return calendar
     }
     
@@ -68,12 +77,27 @@ struct FSCalendarView: UIViewRepresentable {
         let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: calendar.currentPage)
         calendar.setCurrentPage(nextMonth!, animated: true)
         print(calendar.currentPage)
+        calendar.reloadData()
     }
 
     func previousTapped() {
         let previousMonth = Calendar.current.date(byAdding: .month, value: -1, to: calendar.currentPage)
         calendar.setCurrentPage(previousMonth!, animated: true)
         print(calendar.currentPage)
+    }
+    
+    
+    mutating func studioSelected(_ studioName: String) {
+        selectedStudio = studioName
+        calendar.reloadData()
+//        setCalendarPreferences()
+    }
+    
+    func setCalendarPreferences() {
+        guard let selectedStudio = selectedStudio else { return }
+        let currentDate = calendar.currentPage
+        let fetchedEvents = bookingManager.fetchEventsFor(currentDate, studioName: selectedStudio)
+        print(fetchedEvents)
     }
 }
 
@@ -94,6 +118,7 @@ class Coordinator: NSObject, FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.calendar.selectedDate = date
+        self.calendar.onDateSelect?(date)
     }
     
 }
@@ -109,5 +134,13 @@ extension Coordinator: FSCalendarDelegateAppearance {
     func calendar(_ calendar: FSCalendar, appearance: FSCalendarAppearance, titleSelectionColorFor date: Date) -> UIColor? {
         let dateString = self.dateFormatter1.string(from: date)
         return self.calendar.selectedDates.contains(dateString) ? .green : .white
+    }
+}
+
+extension Coordinator: FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        guard let selectedStudio = self.calendar.selectedStudio else { return 0 }
+        let fetchedEvents = bookingManager.fetchEventsFor(date, studioName: selectedStudio)
+        return fetchedEvents.count > 0 ? 1 : 0
     }
 }

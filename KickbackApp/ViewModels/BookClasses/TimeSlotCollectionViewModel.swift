@@ -22,8 +22,9 @@ final class TimeSlotCollectionViewModel: ObservableObject {
         }
     }
     
-    init() {
-        
+    /// Contains selected time slot.
+    init(slots: [TimeSlotItem]) {
+        self.slots = slots
     }
     
     func setPreferences() {
