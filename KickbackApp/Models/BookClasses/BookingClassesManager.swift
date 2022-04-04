@@ -13,8 +13,15 @@ class BookingClassesManager {
     
     var allClasses: ClassBooking = []
     
+    
+    
     init() {
-        fetchAllClasses()
+//        fetchAllClasses()
+        if allClasses.count == 0 {
+            allClasses.append(ClassBookingElement.testBooking)
+            allClasses.append(ClassBookingElement.testBooking2)
+            save()
+        }
     }
     
     /// Contains list of all classes
@@ -28,12 +35,33 @@ class BookingClassesManager {
         }
     }
     
+    /// Used to save all objects of the list.
     func save() {
-        
+        do {
+            try UserDefaults.standard.setObject(allClasses, forKey: .bookingClasses)
+        } catch let error {
+            print(error)
+        }
     }
     
     func add() {
         
     }
+    
+    
+    func fetchEventsFor(_ currentDate: Date, studioName: String) -> [ClassBookingElement] {
+        var events: [ClassBookingElement] = []
+        let currentDateString: String = currentDate.toString()
+        for booking in allClasses {
+            if booking.studioName == studioName {
+                if booking.date.toString() == currentDateString {
+                    events.append(booking)
+                }
+            }
+        }
+        return events
+    }
+    
+    
     
 }

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BookClassesView: View {
     
+
+    
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMM yyyy, hh:mm:ss a"
@@ -22,12 +24,21 @@ struct BookClassesView: View {
     @State var selectedStudio: DropDownItem?
     @State var selectedClassType: DropDownItem?
     
-    @ObservedObject private var event = CalendarEvent()
-    @ObservedObject var viewModel: BookClassesViewModel
-    var selectedDate: Date? = nil {
+    @ObservedObject private var event = CalendarEvent() {
         didSet {
-            print("selectedDate in book classes")
-//            calendar?.selectedDate = selectedDate
+            print("Date selected")
+        }
+    }
+    
+    @ObservedObject var viewModel: BookClassesViewModel
+    @State var selectedDate: Date? = nil {
+        didSet {
+            print("selectedDate in book classes: ", selectedDate ?? "n/a")
+            /// Get time slots of selected date.
+            let selectedDate = calendar.selectedDate
+            guard let date = selectedDate, let studio = selectedStudio?.title else { return }
+            let events = bookingManager.fetchEventsFor(date, studioName: studio)
+            print(events)
         }
     }
     
@@ -38,29 +49,21 @@ struct BookClassesView: View {
     }()
     
     @StateObject var properties = CalendarProperties()
-    
+   
     var calendar: FSCalendarView!
     
     init() {
         let classes = bookingManager.allClasses
         viewModel = .init()
         print(classes.count)
-//        calendar = FSCalendarView(selectedDate: selectedDate, onDateChange: { date in
-//            self.selectedDate = date
-//        })
-//        calendar = FSCalendarView(closure: { date in
-//           selectedDate = date
-//        })
-
         setCalendar()
     }
  
     mutating func setCalendar() {
-//        calendar = FSCalendarView(closure: { date in
-//           selectedDate = date
-//        })
-        calendar = FSCalendarView(selectedDate: $event.date)
-//        e
+        calendar = FSCalendarView(selectedDate: $event.date, selectedStudio: $event.studioName, onDateSelect: { date in
+            print("Date Selcted in closure: ", date)
+//            selectedDate = date
+        })
     }
     
     var body: some View {
@@ -79,31 +82,21 @@ struct BookClassesView: View {
                         VStack {
                             if showStoreDropDown {
                                 Spacer(minLength: 40)
-                                DropDownView(items: viewModel.studios) { selectedItem in
+                                DropDownView(items: viewModel.studioList) { selectedItem in
 //                                    properties = nil
                                     calendar.selectedDate = nil
 //                                    calendar.properties.selectedDate = nil
                                     selectedStudio = selectedItem
                                     showStoreDropDown = false
                                     showClassTypeDropDown = false
+                                    calendar.selectedStudio = selectedItem.title
                                 }
                             }
                         }, alignment: .topLeading
                     )
-                
-                Text("Select a date")
-                    .font(.title)
-                    .foregroundColor(.white)
                 calendar
                     .frame(height: 300.0, alignment: .center)
-//                calendar.onDateChange = {
-//
-//                }
-//                FSCalendarView(selectedDate: $event.date, eventColor: .yellow)
-//                    .frame(height: 300.0, alignment: .center)
                 if (selectedStudio != nil && event.date != nil) {
-//                    Text("Selected date: \(event.date!, formatter: Self.taskDateFormat)")
-//                        .foregroundColor(.white)
                     VStack {
                         VStack(alignment: .leading) {
                             Text("Available Classes")
@@ -120,7 +113,7 @@ struct BookClassesView: View {
                                         VStack {
                                             if showClassTypeDropDown {
                                                 Spacer(minLength: 40)
-                                                DropDownView(items: viewModel.classType) { selectedItem in
+                                                DropDownView(items: viewModel.classTypeList) { selectedItem in
                                                     selectedClassType = selectedItem
                                                     showClassTypeDropDown = false
                                                     showStoreDropDown = false
@@ -131,7 +124,7 @@ struct BookClassesView: View {
                             }
                             .padding(EdgeInsets(top: 10, leading: 0, bottom: 10, trailing: 0))
                             .zIndex(1)
-                            TimeSlotCollectionView(viewModel: .init())
+                            TimeSlotCollectionView(viewModel: .init(slots: []))
                         }
                         .padding(9)
                         .zIndex(1)
@@ -148,8 +141,7 @@ struct BookClassesView: View {
                                     .clipShape(Capsule())
                                     .shadow(color: Color.darkPink.opacity(0.25), radius: 5, x: 0, y: 0)
                             }
-                        }.disabled(true)
-                        
+                        }.disabled(false)
                     }
                 }
                 Spacer()

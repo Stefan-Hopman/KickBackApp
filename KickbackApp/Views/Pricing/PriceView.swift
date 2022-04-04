@@ -22,6 +22,7 @@ struct PriceView: View {
                             .multilineTextAlignment(.leading)
             
                     }   /// VStack closed
+                    
                     Spacer()
                     Image(systemName: "person.fill")
                         .resizable()
@@ -39,7 +40,16 @@ struct PriceView: View {
                     .navigationBarHidden(true)    /// HStack closed
                     .padding(.leading, 10)
                     .padding(.trailing, 10)
-                
+                Image("PricingPage")
+                    .resizable()
+                    .frame(width: 375, height: 227, alignment: .center)
+                    .cornerRadius(10)
+                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
+                Text("Pricing Options")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.darkPink)
+                    .padding(.top, 10)
                 ForEach(PriceOptions){ filter in
                     PriceOptionView(optionData: filter)
                 }
@@ -53,44 +63,77 @@ struct PriceView: View {
     }
 }
 
+ typealias tapClosure = ((PriceOption) -> ())
 
 struct PriceOptionView: View {
 
-    @State var optionData: PriceOption
+    //@State var checked: Bool
+    
+    @ObservedObject var optionData: PriceOption
+    var action : tapClosure? = nil
     
     var body: some View{
         HStack{
-            Circle()
-                .stroke(Color.gray,lineWidth: 2)
-                .frame(width: 30, height: 30, alignment: .leading)
+            VStack(alignment: .leading){
+                Text(optionData.option)
+                    .foregroundColor(Color.docileWhite)
+                    .font(Font.title2.bold())
+                
+                Text(optionData.amount)
+                    .foregroundColor(Color.kWhite)
+                    .font(Font.headline.bold())
+                    .padding(.leading, 0)
+                    
+            }
+            Spacer()
+            ZStack{
+                Circle()
+                    .stroke(optionData.checked ? Color.kWhite : Color.gray, lineWidth: 1)
+                    .frame(width: 25, height: 25)
+                if optionData.checked{
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size:25))
+                        .foregroundColor(Color.kWhite)
+                }
+            }
+        }
+        .padding(.horizontal)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            for option in PriceOptions {
+                option.checked = false
+                if(optionData.id == option.id){
+                    option.checked.toggle()
+                }
+            }
+            //optionData.checked.toggle()
             
         }
-        .frame(width: 350, height: 75)
-        .background(Color.black)
-        .clipShape(RoundedRectangle(cornerRadius: 15.0, style: .circular))
     }
    
 }
 
 
 
-struct PriceOption: Identifiable {
+
+class PriceOption: Identifiable, ObservableObject {
     
     var id = UUID().uuidString
-    var option: String
-    var amount: String
-    var checked: Bool
+    var option: String = ""
+    var amount: String = ""
+    var checked: Bool = false
+    init(option: String, amount: String, checked: Bool) {
+            self.option = option
+            self.amount = amount
+            self.checked = checked
+        }
 }
 
 var PriceOptions = [
-
     PriceOption(option: "One Course", amount: "$45.00", checked: false),
     PriceOption(option: "Monthly Membership", amount: "$200.00 Per Month", checked: false),
     PriceOption(option: "10 Class Package", amount: "$400.00", checked: false),
     PriceOption(option: "20 Class Package", amount: "$750.00", checked: false)
-    
-
-
 ]
 
 struct PriceView_Previews: PreviewProvider {

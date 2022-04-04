@@ -44,14 +44,30 @@ struct CourseDetailView: View {
                         .foregroundColor(.clear)
                         .frame(width: 40, height: 40, alignment: .center)
                 }.padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                Spacer()
+                
                 HStack{
                     
                 }
-                Image(viewModel.course.imagePath)
+                Image(viewModel.course.courseDescriptionImagePath)
                     .resizable()
-                    .frame(width: 350, height: 200, alignment: .center)
+                    .frame(width: 375, height: 227, alignment: .center)
+                    .cornerRadius(10)
+                    .padding(EdgeInsets(top: 20, leading: 10, bottom: 0, trailing: 10))
 
+                Text("About: ")
+                    .foregroundColor(Color.docileWhite)
+                    .font(Font.headline.bold())
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(EdgeInsets(top: 5, leading: 10, bottom: 0, trailing: 10))
+                Text(viewModel.course.courseDescription)
+                    .foregroundColor(Color.white)
+                    .font(Font.body)
+                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+              
+                Text("Trainer: " + viewModel.course.instructor.instructorName)
+                    .font(Font.title2.bold())
+                    .foregroundColor(Color.darkPink)
+                    .padding(EdgeInsets(top: 10, leading: 10, bottom: 0, trailing: 10))
                 Text("About: ")
                     .foregroundColor(Color.docileWhite)
                     .font(Font.headline.bold())
@@ -61,26 +77,8 @@ struct CourseDetailView: View {
                     .foregroundColor(Color.white)
                     .font(Font.body)
                     .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
-                
-                    
-                Text("Trainer: " + viewModel.course.instructor.instructorName)
-                    .font(Font.title2.bold())
-                    .foregroundColor(Color.darkPink)
-                Image("kickBackLogo")
-                    .resizable()
-                    .frame(width: 175, height: 175, alignment: .center)
-                    .clipShape(Circle())
-                Text("About: ")
-                    .foregroundColor(Color.darkPink)
-                    .font(Font.headline.bold())
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 10))
-                Text("Are you ready to kick back and defend yourself?! Prepare to train with best to get the greatest Results. Learn to hit like they do in MMA!")
-                    .foregroundColor(Color.white)
-                    .font(Font.body)
-                    .padding(EdgeInsets(top: 0, leading: 10, bottom: 10, trailing: 10))
-                
-            }       
+                Spacer()
+            }
             
         }
     }
