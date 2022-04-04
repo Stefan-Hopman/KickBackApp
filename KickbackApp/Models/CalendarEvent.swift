@@ -11,4 +11,5 @@ class CalendarEvent: ObservableObject{
     @Published var name = "Helsdfsflo"
     @Published var date: Date?
     @Published var studioName: String?
+    @Published var timeSlot: String?
 }

@@ -10,7 +10,6 @@ import SwiftUI
 struct PriceView: View {
     var body: some View {
         ZStack {
-            
             Color.lightBlack.ignoresSafeArea()
             VStack {
                 HStack{

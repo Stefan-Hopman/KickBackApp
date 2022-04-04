@@ -42,7 +42,7 @@ struct FSCalendarView: UIViewRepresentable {
     var eventColor: UIColor = .red
     let calendar = FSCalendar()
     
-    @State var onDateSelect: ((Date) -> ())?
+    
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -118,7 +118,6 @@ class Coordinator: NSObject, FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         self.calendar.selectedDate = date
-        self.calendar.onDateSelect?(date)
     }
     
 }

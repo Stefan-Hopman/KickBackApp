@@ -9,8 +9,6 @@ import SwiftUI
 
 struct BookClassesView: View {
     
-
-    
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "dd MMM yyyy, hh:mm:ss a"
@@ -24,21 +22,12 @@ struct BookClassesView: View {
     @State var selectedStudio: DropDownItem?
     @State var selectedClassType: DropDownItem?
     
-    @ObservedObject private var event = CalendarEvent() {
-        didSet {
-            print("Date selected")
-        }
-    }
-    
+    @ObservedObject private var event = CalendarEvent()
     @ObservedObject var viewModel: BookClassesViewModel
-    @State var selectedDate: Date? = nil {
+    var selectedDate: Date? = nil {
         didSet {
-            print("selectedDate in book classes: ", selectedDate ?? "n/a")
-            /// Get time slots of selected date.
-            let selectedDate = calendar.selectedDate
-            guard let date = selectedDate, let studio = selectedStudio?.title else { return }
-            let events = bookingManager.fetchEventsFor(date, studioName: studio)
-            print(events)
+            print("selectedDate in book classes")
+//            calendar?.selectedDate = selectedDate
         }
     }
     
@@ -49,7 +38,7 @@ struct BookClassesView: View {
     }()
     
     @StateObject var properties = CalendarProperties()
-   
+    
     var calendar: FSCalendarView!
     
     init() {
@@ -60,10 +49,7 @@ struct BookClassesView: View {
     }
  
     mutating func setCalendar() {
-        calendar = FSCalendarView(selectedDate: $event.date, selectedStudio: $event.studioName, onDateSelect: { date in
-            print("Date Selcted in closure: ", date)
-//            selectedDate = date
-        })
+        calendar = FSCalendarView(selectedDate: $event.date, selectedStudio: $event.studioName)
     }
     
     var body: some View {
@@ -82,7 +68,7 @@ struct BookClassesView: View {
                         VStack {
                             if showStoreDropDown {
                                 Spacer(minLength: 40)
-                                DropDownView(items: viewModel.studioList) { selectedItem in
+                                DropDownView(items: viewModel.studios) { selectedItem in
 //                                    properties = nil
                                     calendar.selectedDate = nil
 //                                    calendar.properties.selectedDate = nil
@@ -94,9 +80,20 @@ struct BookClassesView: View {
                             }
                         }, alignment: .topLeading
                     )
+                
+//                Text("Select a date")
+//                    .font(.title)
+//                    .foregroundColor(.white)
                 calendar
                     .frame(height: 300.0, alignment: .center)
+//                calendar.onDateChange = {
+//
+//                }
+//                FSCalendarView(selectedDate: $event.date, eventColor: .yellow)
+//                    .frame(height: 300.0, alignment: .center)
                 if (selectedStudio != nil && event.date != nil) {
+//                    Text("Selected date: \(event.date!, formatter: Self.taskDateFormat)")
+//                        .foregroundColor(.white)
                     VStack {
                         VStack(alignment: .leading) {
                             Text("Available Classes")
@@ -113,7 +110,7 @@ struct BookClassesView: View {
                                         VStack {
                                             if showClassTypeDropDown {
                                                 Spacer(minLength: 40)
-                                                DropDownView(items: viewModel.classTypeList) { selectedItem in
+                                                DropDownView(items: viewModel.classType) { selectedItem in
                                                     selectedClassType = selectedItem
                                                     showClassTypeDropDown = false
                                                     showStoreDropDown = false
@@ -141,7 +138,8 @@ struct BookClassesView: View {
                                     .clipShape(Capsule())
                                     .shadow(color: Color.darkPink.opacity(0.25), radius: 5, x: 0, y: 0)
                             }
-                        }.disabled(false)
+                        }.disabled(true)
+                        
                     }
                 }
                 Spacer()

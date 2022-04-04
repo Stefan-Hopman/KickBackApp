@@ -74,6 +74,6 @@ struct TimeSlotCollectionView: View {
 struct TimeSlotView_Previews: PreviewProvider {
     static var previews: some View {
 //        TimeSlotView(title: "11:00 - 12:00 pm", color: .yellow)
-        TimeSlotCollectionView(viewModel: .init(slots: []))
+        TimeSlotCollectionView(viewModel: .init())
     }
 }
