@@ -10,17 +10,26 @@ import SwiftUI
 struct TabbarView: View {
     
     init() {
+        
         UITabBar.appearance().unselectedItemTintColor = UIColor(cgColor: CGColor.placeHolderGray)
         UITabBar.appearance().barTintColor = UIColor(Color.lightBlack)
-        
+        UITabBar.appearance().tintColor = UIColor(Color.darkPink)
+        UITabBar.appearance().selectedItem?.badgeColor = UIColor(Color.darkPink)
+    
     }
     
+    @State private var selectedItem = 0
+    
     var body: some View {
+   
         NavigationView {
-            TabView {
-                HomeView(viewModel: .init()).tabItem {
+            TabView(selection: $selectedItem){
+                HomeView(viewModel: HomeViewModel.init(), closure: { tabIndex in
+                    selectedItem = tabIndex
+                }).tabItem {
                     Label("Home", systemImage: "house")
                 }
+                .tag(0)
                 .navigationBarHidden(true)
                 .navigationBarTitle("")
                 
@@ -29,21 +38,33 @@ struct TabbarView: View {
                 }
                 .navigationBarHidden(true)
                 .navigationBarTitle("")
+                .tag(1)
                 
                 AboutUsView().tabItem {
                     Label("About Us", systemImage: "person")
                 }
                 .navigationBarHidden(true)
                 .navigationBarTitle("")
+                .tag(2)
                 
                 PriceView().tabItem {
                     Label("Pricing", systemImage: "creditcard")
                 }
+                .tag(3)
                 .navigationBarHidden(true)
                 .navigationBarTitle("")
             }
+            
+        
             .accentColor(.darkPink)
+            
+           
+            
         }
+        
+        .navigationBarHidden(true)
+        .navigationBarTitle("")
+        
     }
 }
 

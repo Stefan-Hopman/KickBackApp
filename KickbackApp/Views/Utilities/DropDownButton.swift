@@ -14,7 +14,8 @@ struct DropDownButton: View {
     
     @ObservedObject var viewModel: DropDownButtonViewModel
     var onTap: (() -> ())?
-    
+    var width: CGFloat
+    var isShowDropDown: Bool = true
     var body: some View {
         ZStack {
 //            Color.lightBlack
@@ -24,12 +25,14 @@ struct DropDownButton: View {
             }) {
                 HStack(alignment: .center) {
                     Text(viewModel.item?.title ?? "Please Select").foregroundColor(.white)
-//                    Spacer()
-                    Image(systemName: "chevron.down").foregroundColor(.white)
-                    .frame(width: 20)
+                    if isShowDropDown {
+                        Spacer()
+                        Image(systemName: "chevron.down").foregroundColor(.white)
+                        .frame(width: 20)
+                    }
                 }
 //                .colorInvert()
-                .frame(minWidth: 100)
+                .frame(width: width)
                 .padding(EdgeInsets(top: 5, leading: 10, bottom: 5, trailing: 10))
                 .overlay(
                     RoundedRectangle(cornerRadius: 10.0)
@@ -42,8 +45,8 @@ struct DropDownButton: View {
     }
 }
 
-struct DropDownButton_Previews: PreviewProvider {
-    static var previews: some View {
-        DropDownButton(viewModel: .init())
-    }
-}
+//struct DropDownButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        //DropDownButton(viewModel: .init())
+//    }
+//}

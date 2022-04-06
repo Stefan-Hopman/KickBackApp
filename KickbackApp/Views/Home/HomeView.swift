@@ -15,11 +15,12 @@ struct NoButtonStyle: ButtonStyle {
 
 struct HomeView: View {
     
-    init(viewModel: HomeViewModel) {
+    init(viewModel: HomeViewModel, closure: ((Int) -> ())?) {
         self.viewModel = viewModel
+        self.onTabIndexChange = closure
         // this can be done in `onAppear` modifier if you need to restore the appereance later on `onDisappear`
-            UITableView.appearance().tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
-        UITableView.appearance().separatorStyle = .none
+        //UITableView.appearance().tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: Double.leastNonzeroMagnitude))
+       // UITableView.appearance().separatorStyle = .none
 //        return self
         }
     
@@ -30,6 +31,7 @@ struct HomeView: View {
     @State var course: Course!
     @State var selectedCoursesList: CourseList!
     
+    var onTabIndexChange: ((Int) -> Void)?
     var body: some View {
         NavigationView {
             ZStack {
@@ -50,35 +52,49 @@ struct HomeView: View {
                 Color.lightBlack.ignoresSafeArea()
                 ScrollView(.vertical, showsIndicators: false) {
                     VStack(spacing: 0.0) {
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text ("Hi, Jamie")
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color.darkPink)
-                                    .multilineTextAlignment(.leading)
                     
-                                Text("You have helped defend 172 women!")
-                                    .font(Font.subheadline.bold())
-                                    .foregroundColor(Color.white)
-                            }   /// VStack closed
-                            Spacer()
-                            Image(systemName: "person.fill")
-                                .resizable()
-                                .foregroundColor(Color.darkPink)
-                            
-                                .frame(width: 20, height: 20)
-                                .padding(10)
-                                .clipShape(Circle())
-                                .overlay(Circle().stroke(Color.darkPink, lineWidth: 1))
-                                .shadow(radius: 10)
-                                .onTapGesture {
-                                    print("Profile image tapped")
+                            VStack(alignment: .center) {
+                                HStack{
+                                    Text ("Welcome Back Jamie!")
+                                        .font(.title2)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color.white)
+                                        .multilineTextAlignment(.leading)
+                                    Spacer()
+                                    Spacer()
+                                    Image(systemName: "person.fill")
+                                        .resizable()
+                                        .foregroundColor(Color.darkPink)
+                                        .frame(width: 15, height: 15)
+                                        .padding(10)
+                                        .clipShape(Circle())
+                                        .overlay(Circle().stroke(Color.darkPink, lineWidth: 1))
+                                        .shadow(radius: 10)
+                                        .onTapGesture {
+                                            print("Profile image tapped")
+                                        }
+                                    }
+                                Spacer()
+                                Spacer()
+                                VStack(alignment: .center){
+                                    Text("172")
+                                        .font(.system(size: 100, weight: .black, design: .default))
+                                        .foregroundColor(Color.darkPink)
+                                    Spacer()
+                                    Text("women you have helped protect!")
+                                        .font(Font.title2.bold())
+                                        .foregroundColor(Color.white)
+                                    
+                                    DropDownButton(viewModel: .init(.init(title: "Learn More")), onTap: {
+                                        print("Learn more implemented")
+                                        onTabIndexChange?(2)
+                                    }, width: 100, isShowDropDown: false)
                                 }
                         }
                         .navigationBarHidden(true)    /// HStack closed
                         .padding(.leading, 10)
                         .padding(.trailing, 10)
+                        .padding(.top, 2)
                         
                         Spacer()
                             .frame(height: 10)
@@ -97,6 +113,7 @@ struct HomeView: View {
                         VStack(alignment: .center){
                             Button(action: {
                                 print("Button Tapped")
+                                onTabIndexChange?(1)
                             }) {
                                 Text("BOOK NOW")
                                     .foregroundColor(.white)
@@ -135,6 +152,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(viewModel: HomeViewModel())
+        HomeView(viewModel: HomeViewModel(), closure: nil)
     }
 }

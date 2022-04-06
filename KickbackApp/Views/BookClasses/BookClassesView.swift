@@ -82,7 +82,7 @@ struct BookClassesView: View {
                 DropDownButton(viewModel: .init(selectedStudio), onTap: {
                     showClassTypeDropDown = false
                     showStoreDropDown.toggle()
-                })
+                }, width: 175)
                     .zIndex(1)  /// required to show overlay on the top of the other views.
                     .overlay(
                         VStack {
@@ -113,7 +113,7 @@ struct BookClassesView: View {
                                 DropDownButton(viewModel: .init(selectedClassType), onTap: {
                                     showClassTypeDropDown.toggle()
                                     showStoreDropDown = false
-                                })
+                                }, width: 125)
                                     .zIndex(1)  /// required to show overlay on the top of the other views.
                                     .overlay(
                                         VStack {

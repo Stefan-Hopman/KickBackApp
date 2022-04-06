@@ -28,7 +28,7 @@ struct Home: View {
         NavigationView{
             GeometryReader{_ in
                 
-                NavigationLink(destination: TabbarView()
+                NavigationLink(destination: TabbarView.init()
                                 .navigationBarHidden(true)
                                 .navigationBarTitle("")
                                , isActive: $willMoveToNextScreen) { }

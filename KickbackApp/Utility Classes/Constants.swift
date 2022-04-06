@@ -37,15 +37,8 @@ enum TimeSlots: String, CaseIterable {
 
 
 var studios: [String] = [
-    "Sukka Fitness",
-    "Tough Madder MMA",
-    "Kung Fu Dojo",
-    "Ufc Wfa",
-    "The Edge MMA",
-    "Jiu-Jitsu Valhalla",
-    "Karate-It-Up",
-    "Spartan Hills",
-    "Kombat London"
+    "Kick Back Houston"
+    
 ]
 
 var classType: [String] = [

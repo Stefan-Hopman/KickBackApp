@@ -53,6 +53,23 @@ struct PriceView: View {
                 ForEach(PriceOptions){ filter in
                     PriceOptionView(optionData: filter)
                 }
+                VStack(alignment: .center){
+                    Button(action: {
+                        print("Button Tapped")
+                    }) {
+                        Text("CONFIRM")
+                            .foregroundColor(.white)
+                            .fontWeight(.bold)
+                            .padding(.vertical)
+                            .padding(.horizontal, 30)
+                            .background(Color.black)
+                            .clipShape(Capsule())
+                            .shadow(color: Color.darkPink.opacity(0.25), radius: 5, x: 0, y: 0)
+                        
+                    }
+                
+                }
+                .padding(.top, 20)
                 
             Spacer()
             }
@@ -69,7 +86,7 @@ struct PriceOptionView: View {
 
     //@State var checked: Bool
     
-    @ObservedObject var optionData: PriceOption
+    @State var optionData: PriceOption
     var action : tapClosure? = nil
     
     var body: some View{
@@ -100,13 +117,8 @@ struct PriceOptionView: View {
         .padding(.horizontal)
         .contentShape(Rectangle())
         .onTapGesture {
-            for option in PriceOptions {
-                option.checked = false
-                if(optionData.id == option.id){
-                    option.checked.toggle()
-                }
-            }
-            //optionData.checked.toggle()
+            
+            optionData.checked.toggle()
             
         }
     }
@@ -116,18 +128,14 @@ struct PriceOptionView: View {
 
 
 
-class PriceOption: Identifiable, ObservableObject {
+struct PriceOption: Identifiable {
     
     var id = UUID().uuidString
-    var option: String = ""
-    var amount: String = ""
-    var checked: Bool = false
-    init(option: String, amount: String, checked: Bool) {
-            self.option = option
-            self.amount = amount
-            self.checked = checked
-        }
+    var option: String
+    var amount: String
+    var checked: Bool
 }
+
 
 var PriceOptions = [
     PriceOption(option: "One Course", amount: "$45.00", checked: false),
